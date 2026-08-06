@@ -1,4 +1,4 @@
-// Accepts optional arguments with default values
+@use 'variables' as *;
 @mixin flex-center($direction: row) {
     display: flex;
     flex-direction: $direction;
