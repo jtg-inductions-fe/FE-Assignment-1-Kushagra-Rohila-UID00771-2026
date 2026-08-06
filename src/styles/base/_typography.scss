@@ -1,73 +1,61 @@
-/* 1. Define Thin*/
-@font-face {
-    font-family: 'Poppins';
-    src: url('/assets/Poppins/Poppins-Thin.ttf') format('truetype');
-    font-weight: 100;
-    font-style: normal;
-}
+@use 'sass:map';
 
-/* 2. Define ExtraLight */
-@font-face {
-    font-family: 'Poppins';
-    src: url('/assets/Poppins/Poppins-ExtraLight.ttf') format('truetype');
-    font-weight: 200;
-    font-style: normal;
-}
+$fonts: (
+    'Thin': (
+        file: 'Thin',
+        weight: 100,
+        style: 'normal',
+    ),
+    'ExtraLight': (
+        file: 'ExtraLight',
+        weight: 200,
+        style: 'normal',
+    ),
+    'Light': (
+        file: 'Light',
+        weight: 300,
+        style: 'normal',
+    ),
+    'Regular': (
+        file: 'Regular',
+        weight: 400,
+        style: 'normal',
+    ),
+    'Medium': (
+        file: 'Medium',
+        weight: 500,
+        style: 'normal',
+    ),
+    'SemiBold': (
+        file: 'SemiBold',
+        weight: 600,
+        style: 'normal',
+    ),
+    'Bold': (
+        file: 'Bold',
+        weight: 700,
+        style: 'normal',
+    ),
+    'ExtraBold': (
+        file: 'ExtraBold',
+        weight: 800,
+        style: 'normal',
+    ),
+    'Black': (
+        file: 'Black',
+        weight: 900,
+        style: 'normal',
+    ),
+);
 
-/* 3. Define Light */
-@font-face {
-    font-family: 'Poppins';
-    src: url('/assets/Poppins/Poppins-Light.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
-}
-
-/* 4. Define Regular */
-@font-face {
-    font-family: 'Poppins';
-    src: url('/assets/Poppins/Poppins-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
-
-/* 5. Define Medium */
-@font-face {
-    font-family: 'Poppins';
-    src: url('/assets/Poppins/Poppins-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-}
-
-/* 6. Define SemiBold */
-@font-face {
-    font-family: 'Poppins';
-    src: url('/assets/Poppins/Poppins-SemiBold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-}
-
-/* 7. Define Bold */
-@font-face {
-    font-family: 'Poppins';
-    src: url('/assets/Poppins/Poppins-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-}
-
-/* 8. Define ExtraBold */
-@font-face {
-    font-family: 'Poppins';
-    src: url('/assets/Poppins/Poppins-ExtraBold.ttf') format('truetype');
-    font-weight: 800;
-    font-style: normal;
-}
-
-/* 9. Define Black */
-@font-face {
-    font-family: 'Poppins';
-    src: url('/assets/Poppins/Poppins-Black.ttf') format('truetype');
-    font-weight: 900;
-    font-style: normal;
+@each $name, $data in $fonts {
+    @font-face {
+        font-family: Poppins;
+        src: url('/assets/Poppins/Poppins-#{map.get($data, file)}.ttf')
+            format('truetype');
+        font-weight: map.get($data, weight);
+        font-style: map.get($data, style);
+    }
 }
 
 * {

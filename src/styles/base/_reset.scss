@@ -1,5 +1,6 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
+@use 'sass:map';
 
 *,
 *::before,
@@ -31,15 +32,15 @@ body {
     padding: 0 15px;
 
     @include respond-to('mobile') {
-        max-width: map-get($breakpoints, 'mobile');
+        max-width: map.get($breakpoints, 'mobile');
     }
 
     @include respond-to('tablet') {
-        max-width: map-get($breakpoints, 'tablet');
+        max-width: map.get($breakpoints, 'tablet');
     }
 
     @include respond-to('desktop') {
-        max-width: map-get($breakpoints, 'desktop');
+        max-width: map.get($breakpoints, 'desktop');
     }
 }
 
@@ -66,5 +67,11 @@ button {
     font-size: inherit;
     line-height: inherit;
     border: none;
+}
+
+input:focus:not(:focus-visible),
+textarea:focus:not(:focus-visible),
+select:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
     outline: none;
 }

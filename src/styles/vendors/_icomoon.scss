@@ -1,20 +1,22 @@
+$font: AluraBooks;
+
 @font-face {
-    font-family: 'Untitled';
+    font-family: $font;
     src:
-        url('/assets/fonts/Untitled.woff2') format('woff2'),
-        url('/assets/fonts/Untitled.ttf') format('truetype'),
-        url('/assets/fonts/Untitled.woff') format('woff');
+        url('/assets/fonts/AluraBooks.woff2') format('woff2'),
+        url('/assets/fonts/AluraBooks.ttf') format('truetype'),
+        url('/assets/fonts/AluraBooks.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: block;
 }
 @font-palette-values --palette0 {
-    font-family: 'Untitled';
+    font-family: $font;
     base-palette: 0;
 }
 .icon {
     /* Use !important to prevent extensions from overriding this font. */
-    font-family: 'Untitled' !important;
+    font-family: $font !important;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
@@ -27,5 +29,5 @@
 }
 .palette0 {
     font-palette: --palette0;
-    color: currentColor;
+    color: currentcolor;
 }

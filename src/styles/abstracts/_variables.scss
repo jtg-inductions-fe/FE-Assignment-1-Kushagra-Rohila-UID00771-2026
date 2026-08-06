@@ -14,18 +14,18 @@ $color-yellow: #eb9b00;
 
 // 2. Test sizes
 $sizes: (
-    very-small: 14,
-    small: 16,
-    medium: 18,
-    large: 30,
-    very-large: 32,
-    verr-very-large: 36,
+    xs: 14,
+    sm: 16,
+    md: 18,
+    lg: 30,
+    xl: 32,
+    2xl: 36,
 );
 
 // 3. Text Weights
 $weights: (
-    light: 400,
-    regular: 500,
+    regular: 400,
+    medium: 500,
     bold: 700,
 );
 

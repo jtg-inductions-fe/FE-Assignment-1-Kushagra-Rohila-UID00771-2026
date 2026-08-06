@@ -8,12 +8,12 @@
 
 // Generate classes dynamically in rem
 @each $name, $value in $sizes {
-    .text-#{$name} {
+    .text--#{$name} {
         font-size: px-to-rem($value);
     }
 }
 @each $name, $value in $weights {
-    .text-#{$name} {
-        font-size: px-to-rem($value);
+    .text--#{$name} {
+        font-weight: px-to-rem($value);
     }
 }
