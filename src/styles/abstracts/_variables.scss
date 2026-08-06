@@ -1,0 +1,37 @@
+// 1. Color Palette
+$primary-blue: #002f52;
+$secondary-blue: #326589;
+
+$gradient-blue: linear-gradient($primary-blue, $secondary-blue);
+
+$color-white: #ffffff;
+$color-black: #000000;
+$color-gray-light: #ebecee;
+$color-gray-medium: #c4c4c4;
+$color-gray-dark: #858585;
+$color-gray-dark: #474646;
+$color-yellow: #eb9b00;
+
+// 2. Test sizes
+$sizes: (
+    very-small: 14,
+    small: 16,
+    medium: 18,
+    large: 30,
+    very-large: 32,
+    verr-very-large: 36,
+);
+
+// 3. Text Weights
+$weights: (
+    light: 400,
+    regular: 500,
+    bold: 700,
+);
+
+// 4. Responsive Breakpoints
+$breakpoints: (
+    'mobile': 428px,
+    'tablet': 1024px,
+    'desktop': 1728px,
+);

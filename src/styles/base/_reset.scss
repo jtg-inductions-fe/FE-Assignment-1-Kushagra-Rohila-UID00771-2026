@@ -1,0 +1,67 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $color-white;
+    color: $color-black;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    @include respond-to('mobile') {
+        max-width: map-get($breakpoints, 'mobile');
+    }
+
+    @include respond-to('tablet') {
+        max-width: map-get($breakpoints, 'tablet');
+    }
+
+    @include respond-to('desktop') {
+        max--width: map-get($breakpoints, 'desktop');
+    }
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+textarea,
+select,
+button {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    border: none;
+    outline: none;
+}

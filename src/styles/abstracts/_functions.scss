@@ -1,0 +1,15 @@
+@function px-to-rem($pixels) {
+    @return ($pixels / 20) * 1rem;
+}
+
+// Generate classes dynamically in rem
+@each $name, $value in $sizes {
+    .text-#{$name} {
+        font-size: px-to-rem($value);
+    }
+}
+@each $name, $value in $weights {
+    .text-#{$name} {
+        font-size: px-to-rem($value);
+    }
+}
