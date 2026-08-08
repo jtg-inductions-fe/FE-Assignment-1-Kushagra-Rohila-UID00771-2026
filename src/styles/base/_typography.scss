@@ -51,7 +51,17 @@ $fonts: (
 @each $name, $data in $fonts {
     @font-face {
         font-family: Poppins;
-        src: url('/assets/Poppins/Poppins-#{map.get($data, file)}.ttf')
+        src: url('/assets/fonts/Poppins/Poppins-#{map.get($data, file)}.ttf')
+            format('truetype');
+        font-weight: map.get($data, weight);
+        font-style: map.get($data, style);
+    }
+}
+
+@each $name, $data in $fonts {
+    @font-face {
+        font-family: Josefin Sans;
+        src: url('/assets/fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf')
             format('truetype');
         font-weight: map.get($data, weight);
         font-style: map.get($data, style);
@@ -59,5 +69,5 @@ $fonts: (
 }
 
 * {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', 'Josefin Sans', sans-serif;
 }

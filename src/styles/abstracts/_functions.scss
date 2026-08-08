@@ -1,18 +1,27 @@
-@use 'variables' as *;
+@use 'variables' as vars;
 @use 'sass:math';
+@use 'sass:map';
 
 @function px-to-rem($pixels) {
     $unitless: if(math.is-unitless($pixels), $pixels, math.div($pixels, 1px));
     @return math.div($unitless, 16) * 1rem;
 }
 
+@function color($key) {
+    @return map.get(vars.$colors, $key);
+}
+
+@function breakpoint($key) {
+    @return map.get(vars.$breakpoints, $key);
+}
+
 // Generate classes dynamically in rem
-@each $name, $value in $sizes {
+@each $name, $value in vars.$sizes {
     .text--#{$name} {
         font-size: px-to-rem($value);
     }
 }
-@each $name, $value in $weights {
+@each $name, $value in vars.$weights {
     .text--#{$name} {
         font-weight: px-to-rem($value);
     }

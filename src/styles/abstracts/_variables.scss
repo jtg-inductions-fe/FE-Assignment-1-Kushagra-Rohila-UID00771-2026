@@ -1,25 +1,34 @@
+@use 'sass:map';
+
 // 1. Color Palette
-$primary-blue: #002f52;
-$secondary-blue: #326589;
+$colors: (
+    'primary': #002f52,
+    'secondary': #326589,
+    'white': #ffffff,
+    'black': #000000,
+    'gray-light': #ebecee,
+    'gray-medium': #c4c4c4,
+    'gray-dark': #858585,
+    'gray-darker': #474646,
+    'yellow': #eb9b00,
+);
 
-$gradient-blue: linear-gradient($primary-blue, $secondary-blue);
-
-$color-white: #ffffff;
-$color-black: #000000;
-$color-gray-light: #ebecee;
-$color-gray-medium: #c4c4c4;
-$color-gray-dark: #858585;
-$color-gray-dark: #474646;
-$color-yellow: #eb9b00;
+$gradient-blue: linear-gradient(
+    map.get($colors, 'primary'),
+    map.get($colors, 'secondary')
+);
 
 // 2. Test sizes
 $sizes: (
-    xs: 14,
-    sm: 16,
-    md: 18,
-    lg: 30,
-    xl: 32,
-    2xl: 36,
+    2xs: 14,
+    xs: 16,
+    sm: 18,
+    md: 20,
+    lg: 26,
+    xl: 28,
+    2xl: 30,
+    3xl: 32,
+    4xl: 36,
 );
 
 // 3. Text Weights

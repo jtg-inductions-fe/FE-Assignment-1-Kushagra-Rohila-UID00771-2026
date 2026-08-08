@@ -1,5 +1,5 @@
-@use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as func;
+@use '../abstracts/mixins' as mixn;
 @use 'sass:map';
 
 *,
@@ -25,22 +25,21 @@ ul {
 }
 
 body {
-    background-color: $color-white;
-    color: $color-black;
+    background-color: func.color('white');
+    color: func.color('black');
     width: 100%;
     margin: 0 auto;
-    padding: 0 15px;
 
-    @include respond-to('mobile') {
-        max-width: map.get($breakpoints, 'mobile');
+    @include mixn.respond-to('mobile') {
+        max-width: func.breakpoint('mobile');
     }
 
-    @include respond-to('tablet') {
-        max-width: map.get($breakpoints, 'tablet');
+    @include mixn.respond-to('tablet') {
+        max-width: func.breakpoint('tablet');
     }
 
-    @include respond-to('desktop') {
-        max-width: map.get($breakpoints, 'desktop');
+    @include mixn.respond-to('desktop') {
+        max-width: func.breakpoint('desktop');
     }
 }
 
