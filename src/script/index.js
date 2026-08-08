@@ -4,6 +4,7 @@ const categoryMenu = document.getElementById('categoriesMenu');
 const categoriesToggle = document.getElementById('categoriesToggle');
 const categoryList = document.getElementById('categoryList');
 const categoryWrapper = document.getElementById('categoryWrapper');
+const headerNavbarButton = document.querySelectorAll('.header__navbar__button');
 
 // Step 4.1: Mobile Drawer Toggle
 menuToggle.addEventListener('click', (e) => {
@@ -19,10 +20,22 @@ categoriesToggle.addEventListener('click', (e) => {
     categoriesToggle.classList.toggle('color--blue');
 });
 
+headerNavbarButton.forEach((element) => {
+    element.addEventListener('mouseenter', () => {
+        element.classList.add('color--blue');
+    });
+    element.addEventListener('mouseleave', () => {
+        if (element === categoriesToggle) {
+            return;
+        }
+        element.classList.remove('color--blue');
+    });
+});
+
 // Step 4.3: Close menus when user clicks outside
 document.addEventListener('click', (e) => {
     // If click is outside mobile menu, close it
-    if (!categoryMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+    if (!categoryMenu.contains(e.target)) {
         categoryMenu.classList.remove('dropdown-menu--active');
     }
 });
@@ -32,7 +45,7 @@ categoryWrapper.addEventListener('mouseenter', () => {
     categoriesToggle.classList.add('color--blue');
 });
 
-// 2. Triggered when the mouse cursor exits the element
+// Triggered when the mouse cursor exits the element
 categoryWrapper.addEventListener('mouseleave', () => {
     categoryList.classList.remove('dropdown-category__list--active');
     categoriesToggle.classList.remove('color--blue');

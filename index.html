@@ -15,7 +15,7 @@
             </button>
             <div class="dropdown-menu" id="categoriesMenu">
                 <ul class="dropdown-menu__list">
-                    <li class="dropdown-menu__title text--sm text--bold">
+                    <li class="dropdown-menu__title text--xs text--bold">
                         Categories
                     </li>
                     <li class="dropdown-menu__item">
@@ -45,15 +45,19 @@
                         src="/assets/Logo.svg"
                         alt=""
                     />
-                    <div class="header__title text--xl">
-                        <span class="text--bold text--lg">Alura</span>Books
+                    <div class="header__title text--lg">
+                        <span class="text--bold">Alura</span>
+                        <span>Books</span>
                     </div>
                 </a>
                 <nav class="header__navbar">
                     <ul class="header__navbar-list">
                         <div id="categoryWrapper">
                             <li>
-                                <button id="categoriesToggle">
+                                <button
+                                    class="header__navbar__button"
+                                    id="categoriesToggle"
+                                >
                                     CATEGORIES
                                 </button>
                             </li>
@@ -88,8 +92,16 @@
                                 </li>
                             </ul>
                         </div>
-                        <li><button>FAVORITES</button></li>
-                        <li><button>MY BOOKSHELF</button></li>
+                        <li>
+                            <button class="header__navbar__button">
+                                FAVORITES
+                            </button>
+                        </li>
+                        <li>
+                            <button class="header__navbar__button">
+                                MY BOOKSHELF
+                            </button>
+                        </li>
                     </ul>
                 </nav>
                 <div class="header__icon text--3xl">
@@ -98,11 +110,11 @@
                     </div>
                     <div class="header--bag">
                         <span class="icon header__icon--bag">&#xf000;</span>
-                        <div class="header__icon--detail text--lm">My Bag</div>
+                        <div class="header__icon--detail text--md">My Bag</div>
                     </div>
                     <div class="header--profile">
                         <span class="icon header__icon--profile">&#xf001;</span>
-                        <div class="header__icon--detail text--lm">
+                        <div class="header__icon--detail text--md">
                             My Profile
                         </div>
                     </div>

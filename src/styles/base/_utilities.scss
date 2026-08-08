@@ -1,0 +1,6 @@
+@use '../abstracts/functions' as func;
+
+.color--blue {
+    color: func.color('white');
+    background-color: func.color('primary');
+}

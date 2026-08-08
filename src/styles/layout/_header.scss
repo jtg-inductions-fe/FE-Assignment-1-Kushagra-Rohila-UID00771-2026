@@ -1,26 +1,30 @@
-@use '../abstracts/mixins' as *;
-@use '../abstracts/functions' as *;
-@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as mixn;
+@use '../abstracts/functions' as func;
+@use '../abstracts/variables' as vars;
+@use '../base/utilities';
 
 .header {
     width: 100%;
-    background-color: $white;
-    height: px_to_rem(80px);
+    background-color: func.color('white');
+    height: func.px_to_rem(80px);
     display: flex;
     align-items: center;
     position: relative;
 
     &__menu {
         margin: 0;
-        height: px_to_rem(80px);
-        width: px_to_rem(80px);
+        height: func.px_to_rem(80px);
+        width: func.px_to_rem(80px);
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
 
-        @include respond-to('tablet') {
+        @include mixn.respond-to('tablet') {
             display: none;
+        }
+        &:hover {
+            @extend .color--blue;
         }
     }
 
@@ -29,21 +33,21 @@
         display: flex;
         flex: 1;
         align-items: center;
-        padding: 16px;
+        padding: func.px_to_rem(16px);
         justify-content: space-between;
 
-        @include respond-to('tablet') {
-            padding: 78px;
+        @include mixn.respond-to('tablet') {
+            padding: px_to_rem(78px);
         }
     }
 
     &__brand {
         display: flex;
         align-items: center;
-        height: px_to_rem(40px);
+        height: func.px_to_rem(40px);
 
-        @include respond-to('tablet') {
-            width: px_to_rem(264px);
+        @include mixn.respond-to('tablet') {
+            width: func.px_to_rem(264px);
         }
     }
 
@@ -53,10 +57,16 @@
 
     &__title {
         display: none;
-        padding: 10px 0px 0px 10px;
+        font-family: 'Josefin Sans', sans-serif;
+        padding: func.px_to_rem(8px) 0 0 func.px_to_rem(15px);
+        letter-spacing: 2px;
 
-        @include respond-to('tablet') {
-            display: block;
+        span {
+            font-family: inherit;
+        }
+
+        @include mixn.respond-to('tablet') {
+            display: flex;
         }
     }
 
@@ -64,67 +74,70 @@
         display: none;
         position: relative;
 
-        @include respond-to('tablet') {
+        @include mixn.respond-to('tablet') {
             display: flex;
             flex: 1;
-            min-width: 0;
-            padding: 0 12px;
         }
 
         &-list {
             width: 100%;
             display: flex;
-            justify-content: flex-start;
-            gap: 44px;
+            gap: func.px_to_rem(25px);
 
-            @include respond-to('tablet') {
-                max-width: px_to_rem(437px);
+            @include mixn.respond-to('tablet') {
+                max-width: func.px_to_rem(437px);
             }
 
-            @include respond-to('desktop') {
-                max-width: px_to_rem(900px);
+            @include mixn.respond-to('desktop') {
+                max-width: func.px_to_rem(900px);
             }
+        }
+
+        &__button {
+            height: func.px_to_rem(40px);
+            padding: 0 func.px_to_rem(10px);
         }
     }
 
     &__icon {
-        padding: 0 20px;
+        padding: 0 func.px_to_rem(20px);
         display: flex;
-        width: 192px;
-        height: 35px;
+        width: func.px_to_rem(192px);
+        height: func.px_to_rem(35px);
         justify-content: space-between;
 
-        @include respond-to('tablet') {
-            width: 130px;
+        @include mixn.respond-to('tablet') {
+            width: func.px_to_rem(130px);
             padding: 0;
         }
 
-        @include respond-to('desktop') {
-            width: 372px;
-            padding: 0 5px;
+        @include mixn.respond-to('desktop') {
+            width: func.px_to_rem(372px);
+            padding: 0 func.px_to_rem(5px);
         }
     }
 
     &--heart {
-        @include respond-to('tablet') {
+        display: flex;
+        @include mixn.respond-to('tablet') {
             display: none;
         }
     }
 
     &--profile {
         display: flex;
-        gap: 8px;
+        gap: func.px_to_rem(8px);
     }
 
     &--bag {
         display: flex;
-        gap: 10px;
+        gap: func.px_to_rem(10px);
     }
 
     &__icon--detail {
         display: none;
 
-        @include respond-to('desktop') {
+        @include mixn.respond-to('desktop') {
             display: block;
         }
     }
@@ -134,17 +147,23 @@
     display: none;
     left: 0;
     text-align: left;
-    width: px_to_rem(300px);
-    height: px_to_rem(344px);
-    padding: 25px;
+    width: func.px_to_rem(300px);
+    height: func.px_to_rem(344px);
 
     &__item {
-        height: 57px;
+        padding: 0 func.px_to_rem(25px);
+        align-content: center;
+        height: func.px_to_rem(57px);
+        &:hover {
+            @extend .color--blue;
+        }
     }
 
     &__title {
-        height: 57px;
-        color: $color-yellow;
+        align-content: center;
+        padding: 0 func.px_to_rem(25px);
+        height: func.px_to_rem(57px);
+        color: func.color('yellow');
     }
 
     &--active {
@@ -152,7 +171,7 @@
         position: absolute;
         top: 100%;
 
-        @include respond-to('tablet') {
+        @include mixn.respond-to('tablet') {
             display: none;
         }
     }
@@ -163,21 +182,20 @@
         display: none;
         left: 0;
         text-align: left;
-        width: px_to_rem(300px);
-        height: px_to_rem(344px);
-        padding: 25px;
+        width: func.px_to_rem(181px);
+        height: func.px_to_rem(296px);
 
         &--active {
             display: block;
             position: absolute;
-            top: 100%;
         }
     }
     &__item {
-        height: 56px;
+        padding: 0 func.px_to_rem(25px);
+        align-content: center;
+        height: func.px_to_rem(59px);
+        &:hover {
+            @extend .color--blue;
+        }
     }
-}
-.color--blue {
-    color: $color-white;
-    background-color: $primary-blue;
 }
