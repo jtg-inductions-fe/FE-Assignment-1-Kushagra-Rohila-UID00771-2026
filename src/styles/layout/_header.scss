@@ -17,7 +17,6 @@
         @include mixn.respond-to('tablet') {
             display: none;
         }
-
         &:hover {
             @extend %bg-blue;
         }
@@ -91,6 +90,11 @@
         padding: func.px_to_rem(10px) 0;
         &:hover {
             @extend %bg-blue;
+        }
+
+        &__button {
+            height: func.px_to_rem(40px);
+            padding: 0 func.px_to_rem(10px);
         }
     }
 
