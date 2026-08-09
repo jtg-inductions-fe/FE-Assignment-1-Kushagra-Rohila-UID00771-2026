@@ -1,0 +1,87 @@
+@use '../abstracts/functions' as func;
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mixn;
+
+.find-section {
+    color: func.color('white');
+    background-image: vars.$gradient-blue;
+    height: func.px_to_rem(215px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: func.px_to_rem(7px);
+
+    @include mixn.respond-to('tablet') {
+        height: func.px_to_rem(330px);
+        gap: func.px_to_rem(2px);
+    }
+
+    &__heading {
+        font-size: func.size(sm);
+        text-align: center;
+        @include mixn.respond-to('tablet') {
+            font-size: func.size(4xl);
+        }
+    }
+
+    &__details {
+        width: func.px_to_rem(316px);
+        height: func.px_to_rem(48px);
+        text-align: center;
+        @include mixn.respond-to('tablet') {
+            width: 100%;
+        }
+    }
+
+    &__form {
+        position: relative;
+        margin-top: 18px;
+        text-align: center;
+        width: func.px_to_rem(380px);
+        height: func.px_to_rem(44px);
+        border-radius: func.px_to_rem(24px);
+        border: 1px solid func.color('white');
+        padding: 10px;
+        @include mixn.respond-to('tablet') {
+            margin-top: 0;
+            width: func.px_to_rem(476px);
+            height: func.px_to_rem(56px);
+        }
+        @include mixn.respond-to('tablet') {
+            width: func.px_to_rem(586px);
+        }
+    }
+
+    &__input {
+        outline: none;
+        width: 100%;
+        color: func.color('white');
+        height: 100%;
+        text-align: center;
+        &:focus + .find-section__label,
+        &:not(:placeholder-shown) + .find-section__label {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
+    &__label {
+        color: func.color('white');
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        pointer-events: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        font-size: func.size(2xs);
+
+        @include mixn.respond-to('tablet') {
+            font-size: func.size(xs);
+        }
+    }
+}
