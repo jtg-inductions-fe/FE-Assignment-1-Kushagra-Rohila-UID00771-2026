@@ -33,9 +33,9 @@
         justify-content: center;
     }
     @include mixn.respond-to('desktop') {
-        width: func.px_to_rem(750px);
+        width: func.px_to_rem(745px);
         display: flex;
-        padding: 0 2rem;
+        padding: 0 2.2rem;
         padding-top: 4rem;
         justify-content: center;
     }
