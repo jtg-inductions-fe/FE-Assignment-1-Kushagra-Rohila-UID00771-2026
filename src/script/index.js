@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const carousel = new Splide('#image-carousel', {
+    const carousel1 = new Splide('#latest-releases--carousel', {
         type: 'loop',
         mediaQuery: 'min',
         perPage: 1,
@@ -155,14 +155,41 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     });
 
-    carousel.mount();
+    carousel1.mount();
 
-    const splideEl = document.querySelector('.splide');
+    const carousel2 = new Splide('#best-sellers--carousel', {
+        type: 'loop',
+        mediaQuery: 'min',
+        perPage: 1,
+        perMove: 1,
+        gap: '1.2rem', // Grid spacing
+        arrows: true, // Renders arrow buttons
+        pagination: true, // Renders circle dots
+        padding: '29%',
+        drag: true, // Desktop mouse drag
+        flickPower: 900,
+        breakpoints: {
+            1024: {
+                perPage: 3,
+                perMove: 3,
+                padding: '0%',
+                gap: '5rem',
+            },
+            1728: {
+                gap: '0.9rem',
+            },
+        },
+    });
+
+    carousel2.mount();
+
+    const splideEl1 = document.getElementById('latest-releases--carousel');
+    const splideEl2 = document.getElementById('best-sellers--carousel');
 
     let isScrolling = false;
     const cooldown = 200;
 
-    splideEl.addEventListener(
+    splideEl1.addEventListener(
         'wheel',
         (event) => {
             if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
@@ -173,11 +200,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 isScrolling = true;
 
                 if (event.deltaX > 0) {
-                    carousel.go('>');
+                    carousel1.go('>');
                 }
 
                 if (event.deltaX < 0) {
-                    carousel.go('<');
+                    carousel1.go('<');
+                }
+
+                setTimeout(() => {
+                    isScrolling = false;
+                }, cooldown);
+            }
+        },
+        { passive: true },
+    );
+    splideEl2.addEventListener(
+        'wheel',
+        (event) => {
+            if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
+                event.preventDefault();
+
+                if (isScrolling) return;
+
+                isScrolling = true;
+
+                if (event.deltaX > 0) {
+                    carousel2.go('>');
+                }
+
+                if (event.deltaX < 0) {
+                    carousel2.go('<');
                 }
 
                 setTimeout(() => {
