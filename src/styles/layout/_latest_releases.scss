@@ -3,64 +3,21 @@
 @use '../abstracts/mixins' as mixn;
 
 .latest-releases {
-    background-color: func.color('gray-light');
-    @include mixn.size(auto, func.px_to_rem(655px));
-    margin-top: func.px_to_rem(8px);
-
-    @include mixn.respond-to('tablet') {
-        @include mixn.flex(column, center, baseline, nowrap);
-        @include mixn.size(auto, func.px_to_rem(840px));
-        margin-top: func.px_to_rem(30px);
-    }
-
-    @include mixn.respond-to('desktop') {
-        @include mixn.size(auto, auto);
-    }
-
-    &__heading {
-        background-color: func.color('white');
-        color: func.color('yellow');
-        font-size: func.size('sm');
-        @include mixn.size(100%, auto);
-        text-align: center;
-        padding: func.px_to_rem(10px);
-
-        @include mixn.respond-to('tablet') {
-            font-size: func.size(lg);
-            padding: func.px_to_rem(18px);
-        }
-
-        @include mixn.respond-to('desktop') {
-            font-size: func.size(3xl);
-            padding: func.px_to_rem(12px);
-            padding-right: 8rem;
-        }
-    }
-
     &__content {
         @include mixn.respond-to('tablet') {
-            @include mixn.flex(column, center, baseline, nowrap);
-
-            @include mixn.respond-to('desktop') {
-                flex-direction: row;
-                @include mixn.size(auto, func.px_to_rem(508px));
-                margin-left: 1.1rem;
-                gap: 1.1rem;
-            }
+            align-items: center;
+        }
+        @include mixn.respond-to('desktop') {
+            padding-left: 11rem;
+            padding-top: 1rem;
+            gap: 1.1rem;
         }
     }
-
     &__article {
-        @include mixn.flex(row, center, space-between, nowrap);
-        @include mixn.size(func.px_to_rem(380px), func.px_to_rem(295px));
-        margin: 1.2rem 1.55rem;
-        background-color: func.color('white');
-        border-radius: func.px_to_rem(10px);
         padding: 0.9rem 0.8rem;
-        gap: func.px_to_rem(10px);
-
         @include mixn.respond-to('tablet') {
-            @include mixn.size(func.px_to_rem(588px), func.px_to_rem(266px));
+            width: func.px_to_rem(580px);
+            height: func.px_to_rem(266px);
             margin-top: 3.8rem;
         }
 

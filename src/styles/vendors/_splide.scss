@@ -14,7 +14,7 @@
             height: func.px_to_rem(265px);
             width: func.px_to_rem(192px);
         }
-        @include mixn.respond-to('tablet') {
+        @include mixn.respond-to('desktop') {
             height: func.px_to_rem(254px);
             width: func.px_to_rem(180px);
         }
@@ -35,7 +35,7 @@
     @include mixn.respond-to('desktop') {
         width: func.px_to_rem(750px);
         display: flex;
-        padding: 0 2.5rem;
+        padding: 0 2rem;
         padding-top: 4rem;
         justify-content: center;
     }
