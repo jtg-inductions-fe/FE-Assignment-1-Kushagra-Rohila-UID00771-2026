@@ -86,11 +86,6 @@
         &__right {
             display: flex;
             flex-direction: column;
-
-            @include mixn.respond-to('desktop') {
-                gap: 2.4rem;
-                margin: 1.1rem 0.2rem 0 0;
-            }
         }
 
         h1 {

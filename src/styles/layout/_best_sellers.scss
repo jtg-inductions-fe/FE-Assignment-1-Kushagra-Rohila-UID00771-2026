@@ -9,9 +9,9 @@
         }
         @include mixn.respond-to('desktop') {
             align-items: flex-start;
-            padding-left: 10.9rem;
+            padding-left: 10.8rem;
             padding-top: 2.2rem;
-            gap: 1.8rem;
+            gap: 1.9rem;
         }
     }
     &__article {
@@ -25,6 +25,7 @@
         }
         @include mixn.respond-to('desktop') {
             width: func.px_to_rem(592px);
+            height: func.px_to_rem(280px);
             padding: 1rem 1.27rem 0.2rem 1.27rem;
         }
         &__left {
@@ -44,7 +45,7 @@
             }
             @include mixn.respond-to('desktop') {
                 margin: 0;
-                gap: 2rem;
+                gap: 1.8rem;
             }
         }
         &__icons {
