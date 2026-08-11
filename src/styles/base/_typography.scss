@@ -1,54 +1,54 @@
 @use 'sass:map';
 
-$fonts: (
-    'Thin': (
+$font-weights: (
+    'thin': (
         file: 'Thin',
         weight: 100,
         style: 'normal',
     ),
-    'ExtraLight': (
+    'extra-light': (
         file: 'ExtraLight',
         weight: 200,
         style: 'normal',
     ),
-    'Light': (
+    'light': (
         file: 'Light',
         weight: 300,
         style: 'normal',
     ),
-    'Regular': (
+    'regular': (
         file: 'Regular',
         weight: 400,
         style: 'normal',
     ),
-    'Medium': (
+    'medium': (
         file: 'Medium',
         weight: 500,
         style: 'normal',
     ),
-    'SemiBold': (
+    'semi-bold': (
         file: 'SemiBold',
         weight: 600,
         style: 'normal',
     ),
-    'Bold': (
+    'bold': (
         file: 'Bold',
         weight: 700,
         style: 'normal',
     ),
-    'ExtraBold': (
+    'extra-bold': (
         file: 'ExtraBold',
         weight: 800,
         style: 'normal',
     ),
-    'Black': (
+    'black': (
         file: 'Black',
         weight: 900,
         style: 'normal',
     ),
 );
 
-@each $name, $data in $fonts {
+@each $name, $data in $font-weights {
     @font-face {
         font-family: Poppins;
         src: url('/assets/fonts/Poppins/Poppins-#{map.get($data, file)}.ttf')
@@ -58,7 +58,7 @@ $fonts: (
     }
 }
 
-@each $name, $data in $fonts {
+@each $name, $data in $font-weights {
     @font-face {
         font-family: Josefin Sans;
         src: url('/assets/fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf')

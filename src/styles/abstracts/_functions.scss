@@ -23,6 +23,6 @@
 }
 @each $name, $value in vars.$weights {
     .text--#{$name} {
-        font-weight: px-to-rem($value);
+        font-weight: $value;
     }
 }

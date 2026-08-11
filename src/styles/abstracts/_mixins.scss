@@ -1,11 +1,26 @@
 @use 'variables' as vars;
 @use 'sass:map';
 
-@mixin flex-center($direction: row) {
+@mixin flex-center(
+    $direction: row,
+    $align: center,
+    $justify: center,
+    $wrap: nowrap
+) {
     display: flex;
     flex-direction: $direction;
-    align-items: center;
-    justify-content: center;
+    align-items: $align;
+    justify-content: $justify;
+    flex-wrap: $wrap;
+}
+
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+@mixin transition($property: all, $duration: 0.2s, $easing: ease-in-out) {
+    transition: $property $duration $easing;
 }
 
 @mixin respond-to($breakpoint) {

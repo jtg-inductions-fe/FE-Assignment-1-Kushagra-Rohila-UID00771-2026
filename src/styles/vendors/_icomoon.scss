@@ -1,11 +1,13 @@
-$font: AluraBooks;
+$font: 'AluraBooks';
 
 @font-face {
     font-family: $font;
     src:
         url('/assets/fonts/AluraBooks.woff2') format('woff2'),
+        url('/assets/fonts/AluraBooks.woff') format('woff'),
         url('/assets/fonts/AluraBooks.ttf') format('truetype'),
-        url('/assets/fonts/AluraBooks.woff') format('woff');
+        url('/assets/fonts/AluraBooks.otf') format('opentype');
+
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -14,7 +16,7 @@ $font: AluraBooks;
     font-family: $font;
     base-palette: 0;
 }
-.icon {
+.icon-font {
     /* Use !important to prevent extensions from overriding this font. */
     font-family: $font !important;
     font-style: normal;
@@ -27,7 +29,7 @@ $font: AluraBooks;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-.palette0 {
+.icon-font--palette-zero {
     font-palette: --palette0;
     color: currentcolor;
 }
