@@ -29,7 +29,7 @@
         @include mixn.respond-to('tablet') {
             width: func.px_to_rem(376px);
         }
-        @include mixn.respond-to('tablet') {
+        @include mixn.respond-to('desktop') {
             width: func.px_to_rem(420px);
 
             gap: 0.38rem;
