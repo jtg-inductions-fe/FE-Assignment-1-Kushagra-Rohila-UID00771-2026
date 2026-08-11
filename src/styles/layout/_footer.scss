@@ -1,0 +1,59 @@
+@use '../abstracts/functions' as func;
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mixn;
+.footer {
+    height: func.px_to_rem(65px);
+    padding: 1rem 1.5rem;
+    font-size: func.size(2xs);
+    @include mixn.respond-to('tablet') {
+        height: auto;
+        display: flex;
+        gap: 6.8rem;
+        padding: 3.2rem 0 4.2rem 1.5rem;
+    }
+    @include mixn.respond-to('desktop') {
+        gap: 7.8rem;
+        padding: 3.2rem 0 4rem 12.9rem;
+    }
+
+    &__content {
+        display: none;
+        color: func.color('gray-darker');
+        @include mixn.respond-to('tablet') {
+            display: flex;
+            gap: 5.2rem;
+        }
+        @include mixn.respond-to('desktop') {
+            gap: 12.5rem;
+        }
+    }
+    &__column {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        @include mixn.respond-to('desktop') {
+            border-left: 1px solid;
+            padding: 0 0 0 1.5rem;
+            gap: 1rem;
+        }
+
+        div {
+            display: flex;
+            gap: 0.4rem;
+            align-items: center;
+        }
+    }
+
+    h1 {
+        font-size: func.size(xs);
+        @include mixn.respond-to('tablet') {
+            font-size: func.size(rg);
+        }
+    }
+    h2 {
+        color: func.color('gray-dark');
+        font-size: inherit;
+        padding: 0 0 0.8rem 0;
+    }
+}
