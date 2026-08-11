@@ -12,7 +12,7 @@ $colors: (
     'gray-darker': #474646,
     'yellow': #eb9b00,
 );
-
+//Gradient
 $gradient-blue: linear-gradient(
     map.get($colors, 'primary'),
     map.get($colors, 'secondary')
