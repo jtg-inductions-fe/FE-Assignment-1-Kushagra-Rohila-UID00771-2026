@@ -3,11 +3,8 @@
 @use '../abstracts/mixins' as mixn;
 
 .recently-visited {
-    display: flex;
-    flex-direction: column;
+    @include mixn.flex(column, center, center, nowrap);
     padding: 1.5rem 0;
-    justify-content: center;
-    align-items: center;
     background-image: vars.$gradient-blue;
     gap: 2rem;
     @include mixn.respond-to('tablet') {
