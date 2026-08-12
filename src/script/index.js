@@ -66,63 +66,62 @@ document.addEventListener('DOMContentLoaded', () => {
             categoriesToggle.classList.remove('bg-blue');
         });
     }
-
-    document.addEventListener('DOMContentLoaded', () => {
-        const carousel = new Splide('#image-carousel', {
-            type: 'loop',
-            mediaQuery: 'min',
-            perPage: 1,
-            perMove: 1,
-            gap: '1.2rem', // Grid spacing
-            arrows: true, // Renders arrow buttons
-            pagination: true, // Renders circle dots
-            padding: '29%',
-            drag: true, // Desktop mouse drag
-            flickPower: 900,
-            breakpoints: {
-                1024: {
-                    perPage: 3,
-                    perMove: 3,
-                    padding: '0%',
-                    gap: '5rem',
-                },
-                1728: {
-                    gap: '0.9rem',
-                },
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const carousel = new Splide('#image-carousel', {
+        type: 'loop',
+        mediaQuery: 'min',
+        perPage: 1,
+        perMove: 1,
+        gap: '1.2rem', // Grid spacing
+        arrows: true, // Renders arrow buttons
+        pagination: true, // Renders circle dots
+        padding: '29%',
+        drag: true, // Desktop mouse drag
+        flickPower: 900,
+        breakpoints: {
+            1024: {
+                perPage: 3,
+                perMove: 3,
+                padding: '0%',
+                gap: '5rem',
             },
-        });
-
-        carousel.mount();
-
-        const splideEl = document.querySelector('.splide');
-
-        let isScrolling = false;
-        const cooldown = 200;
-
-        splideEl.addEventListener(
-            'wheel',
-            (event) => {
-                if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
-                    event.preventDefault();
-
-                    if (isScrolling) return;
-
-                    isScrolling = true;
-
-                    if (event.deltaX > 0) {
-                        carousel.go('>');
-                    }
-
-                    if (event.deltaX < 0) {
-                        carousel.go('<');
-                    }
-
-                    setTimeout(() => {
-                        isScrolling = false;
-                    }, cooldown);
-                }
+            1728: {
+                gap: '0.9rem',
             },
-            { passive: true },
-        );
+        },
     });
+
+    carousel.mount();
+
+    const splideEl = document.querySelector('.splide');
+
+    let isScrolling = false;
+    const cooldown = 200;
+
+    splideEl.addEventListener(
+        'wheel',
+        (event) => {
+            if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
+                event.preventDefault();
+
+                if (isScrolling) return;
+
+                isScrolling = true;
+
+                if (event.deltaX > 0) {
+                    carousel.go('>');
+                }
+
+                if (event.deltaX < 0) {
+                    carousel.go('<');
+                }
+
+                setTimeout(() => {
+                    isScrolling = false;
+                }, cooldown);
+            }
+        },
+        { passive: true },
+    );
 });

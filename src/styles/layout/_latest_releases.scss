@@ -4,26 +4,24 @@
 
 .latest-releases {
     background-color: func.color('gray-light');
-    height: func.px_to_rem(655px);
+    @include mixn.size(auto, func.px_to_rem(655px));
     margin-top: func.px_to_rem(8px);
 
     @include mixn.respond-to('tablet') {
-        display: flex;
-        flex-direction: column;
-        height: func.px_to_rem(840px);
+        @include mixn.flex(column, center, baseline, nowrap);
+        @include mixn.size(auto, func.px_to_rem(840px));
         margin-top: func.px_to_rem(30px);
-        align-items: center;
     }
 
     @include mixn.respond-to('desktop') {
-        height: auto;
+        @include mixn.size(auto, auto);
     }
 
     &__heading {
         background-color: func.color('white');
         color: func.color('yellow');
         font-size: func.size('sm');
-        width: 100%;
+        @include mixn.size(100%, auto);
         text-align: center;
         padding: func.px_to_rem(10px);
 
@@ -41,13 +39,11 @@
 
     &__content {
         @include mixn.respond-to('tablet') {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            @include mixn.flex(column, center, baseline, nowrap);
 
             @include mixn.respond-to('desktop') {
                 flex-direction: row;
-                height: func.px_to_rem(508px);
+                @include mixn.size(auto, func.px_to_rem(508px));
                 margin-left: 1.1rem;
                 gap: 1.1rem;
             }
@@ -55,33 +51,29 @@
     }
 
     &__article {
-        display: flex;
+        @include mixn.flex(row, center, space-between, nowrap);
+        @include mixn.size(func.px_to_rem(380px), func.px_to_rem(295px));
         margin: 1.2rem 1.55rem;
         background-color: func.color('white');
         border-radius: func.px_to_rem(10px);
         padding: 0.9rem 0.8rem;
-        width: func.px_to_rem(380px);
-        height: func.px_to_rem(295px);
-        justify-content: space-between;
         gap: func.px_to_rem(10px);
 
         @include mixn.respond-to('tablet') {
-            width: func.px_to_rem(588px);
-            height: func.px_to_rem(266px);
+            @include mixn.size(func.px_to_rem(588px), func.px_to_rem(266px));
             margin-top: 3.8rem;
         }
 
         @include mixn.respond-to('desktop') {
+            @include mixn.size(func.px_to_rem(588px), func.px_to_rem(278px));
             height: func.px_to_rem(278px);
             margin-top: 1rem;
             padding: 0.5rem 0.7rem;
         }
 
         &__left {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            height: func.px_to_rem(254px);
+            @include mixn.flex(column, flex-start, baseline, nowrap);
+            @include mixn.size(100%, func.px_to_rem(254px));
             gap: func.px_to_rem(7px);
             padding: 0 0.4rem;
 
@@ -95,8 +87,7 @@
         }
 
         &__right {
-            display: flex;
-            flex-direction: column;
+            @include mixn.flex(column, flex-start, baseline, nowrap);
             margin: func.px_to_rem(5px);
             gap: 2.1rem;
 
@@ -127,11 +118,12 @@
         }
 
         p {
-            width: func.px_to_rem(148px);
+            @include mixn.size(func.px_to_rem(148px), auto);
             font-size: func.size(2xs);
 
             @include mixn.respond-to('tablet') {
                 font-size: func.size(xs);
+                @include mixn.size(func.px_to_rem(318px), auto);
                 width: func.px_to_rem(318px);
             }
 
@@ -141,18 +133,19 @@
         }
 
         img {
-            width: func.px_to_rem(162px);
-            height: func.px_to_rem(168px);
+            @include mixn.size(func.px_to_rem(162px), func.px_to_rem(168px));
 
             @include mixn.respond-to('tablet') {
-                width: func.px_to_rem(146px);
-                height: func.px_to_rem(152px);
+                @include mixn.size(
+                    func.px_to_rem(146px),
+                    func.px_to_rem(152px)
+                );
             }
         }
 
         &__icons {
             display: flex;
-            width: 100%;
+            @include mixn.size(100%, auto);
             gap: func.px_to_rem(27px);
             padding: func.px_to_rem(10px);
 
@@ -169,12 +162,11 @@
 
         button {
             background-color: func.color('yellow');
-            width: func.px_to_rem(161px);
-            height: func.px_to_rem(48px);
+            @include mixn.size(func.px_to_rem(161px), func.px_to_rem(48px));
             color: func.color('white');
 
             @include mixn.respond-to('tablet') {
-                width: func.px_to_rem(146px);
+                @include mixn.size(func.px_to_rem(146px), func.px_to_rem(48px));
             }
         }
     }
