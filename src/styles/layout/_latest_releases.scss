@@ -68,7 +68,7 @@
             @include mixn.size(func.px_to_rem(588px), func.px_to_rem(278px));
             height: func.px_to_rem(278px);
             margin-top: 1rem;
-            padding: 0.5rem 0.7rem;
+            padding: 0.4rem 0 0 1.2rem;
         }
 
         &__left {
@@ -78,11 +78,12 @@
             padding: 0 0.4rem;
 
             @include mixn.respond-to('tablet') {
-                padding: 0.5rem 0.1rem;
+                padding: 1rem 0.1rem 0.5rem 0.2rem;
             }
 
             @include mixn.respond-to('desktop') {
-                gap: func.px_to_rem(2px);
+                padding: 0;
+                gap: 0;
             }
         }
 
@@ -98,8 +99,9 @@
 
             @include mixn.respond-to('desktop') {
                 justify-content: space-between;
-                margin: func.px_to_rem(15px) func.px_to_rem(15px)
-                    func.px_to_rem(8px) func.px_to_rem(10px);
+                margin: func.px_to_rem(4px) func.px_to_rem(15px)
+                    func.px_to_rem(2px) func.px_to_rem(10px);
+                gap: 2.5rem;
             }
         }
 
@@ -150,7 +152,7 @@
             padding: func.px_to_rem(10px);
 
             @include mixn.respond-to('tablet') {
-                margin-top: 4rem;
+                margin-top: 3.7rem;
                 padding: 0;
             }
 
