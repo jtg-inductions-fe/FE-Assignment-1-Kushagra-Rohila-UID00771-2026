@@ -9,126 +9,148 @@
     </head>
 
     <body>
-        <header class="header">
-            <button class="header__menu" id="menuToggle">
-                <span class="icon-font text--lg">&#xf006;</span>
-            </button>
-            <div class="dropdown-menu" id="categoriesMenu">
-                <ul class="dropdown-menu__list">
-                    <li class="dropdown-menu__title text--xs text--bold">
-                        Categories
-                    </li>
-                    <li class="dropdown-menu__item">
-                        <a href="#" class="dropdown-menu__link">PROGRAMMING</a>
-                    </li>
-                    <li class="dropdown-menu__item">
-                        <a href="#" class="dropdown-menu__link">FRONT-END</a>
-                    </li>
-                    <li class="dropdown-menu__item">
-                        <a href="#" class="dropdown-menu__link"
-                            >INFRASTRUCTURE</a
-                        >
-                    </li>
-                    <li class="dropdown-menu__item">
-                        <a href="#" class="dropdown-menu__link">BUSINESS</a>
-                    </li>
-                    <li class="dropdown-menu__item">
-                        <a href="#" class="dropdown-menu__link">DESIGN & UX</a>
-                    </li>
-                </ul>
-            </div>
+        <div class="page-container">
+            <noscript>
+                This site requires JavaScript to function fully. Please enable
+                it in your browser.
+            </noscript>
 
-            <div class="header__inner">
-                <a class="header__brand">
-                    <img
-                        class="header__logo-img"
-                        src="/assets/Logo.svg"
-                        alt=""
-                    />
-                    <div class="header__title text--lg">
-                        <span class="text--bold">Alura</span>
-                        <span>Books</span>
-                    </div>
-                </a>
-                <nav class="header__navbar">
-                    <ul class="header__navbar-list">
-                        <div id="categoryWrapper">
-                            <li>
-                                <button
-                                    class="header__navbar__button"
-                                    id="categoriesToggle"
-                                >
-                                    CATEGORIES
-                                </button>
-                            </li>
-                            <ul
-                                class="dropdown-category__list"
-                                id="categoryList"
-                            >
-                                <li class="dropdown-category__item">
-                                    <a href="#" class="dropdown-menu__link"
-                                        >PROGRAMMING</a
-                                    >
-                                </li>
-                                <li class="dropdown-category__item">
-                                    <a href="#" class="dropdown-menu__link"
-                                        >FRONT-END</a
-                                    >
-                                </li>
-                                <li class="dropdown-category__item">
-                                    <a href="#" class="dropdown-menu__link"
-                                        >INFRASTRUCTURE</a
-                                    >
-                                </li>
-                                <li class="dropdown-category__item">
-                                    <a href="#" class="dropdown-menu__link"
-                                        >BUSINESS</a
-                                    >
-                                </li>
-                                <li class="dropdown-category__item">
-                                    <a href="#" class="dropdown-menu__link"
-                                        >DESIGN & UX</a
-                                    >
-                                </li>
-                            </ul>
-                        </div>
-                        <li>
-                            <button class="header__navbar__button">
-                                FAVORITES
-                            </button>
+            <header class="header">
+                <button class="header__menu" id="menuToggle">
+                    <span class="icon-font text--lg">&#xf006;</span>
+                </button>
+                <div class="dropdown-menu" id="categoriesMenu">
+                    <ul class="dropdown-menu__list">
+                        <li class="dropdown-menu__title text--sm text--bold">
+                            Categories
                         </li>
-                        <li>
-                            <button class="header__navbar__button">
-                                MY BOOKSHELF
-                            </button>
+                        <li class="dropdown-menu__item">
+                            <a href="#" class="dropdown-menu__link"
+                                >PROGRAMMING</a
+                            >
+                        </li>
+                        <li class="dropdown-menu__item">
+                            <a href="#" class="dropdown-menu__link"
+                                >FRONT-END</a
+                            >
+                        </li>
+                        <li class="dropdown-menu__item">
+                            <a href="#" class="dropdown-menu__link"
+                                >INFRASTRUCTURE</a
+                            >
+                        </li>
+                        <li class="dropdown-menu__item">
+                            <a href="#" class="dropdown-menu__link">BUSINESS</a>
+                        </li>
+                        <li class="dropdown-menu__item">
+                            <a href="#" class="dropdown-menu__link"
+                                >DESIGN & UX</a
+                            >
                         </li>
                     </ul>
-                </nav>
-                <div class="header__icon text--3xl">
-                    <div class="header--heart">
-                        <span class="icon-font header__icon--heart"
-                            >&#xf003;</span
-                        >
-                    </div>
-                    <div class="header--bag">
-                        <span class="icon-font header__icon--bag"
-                            >&#xf000;</span
-                        >
-                        <div class="header__icon--detail text--md">My Bag</div>
-                    </div>
-                    <div class="header--profile">
-                        <span class="icon-font header__icon--profile"
-                            >&#xf001;</span
-                        >
-                        <div class="header__icon--detail text--md">
-                            My Profile
+                </div>
+
+                <div class="header__inner">
+                    <a class="header__brand">
+                        <img
+                            class="header__logo-img"
+                            src="/assets/Logo.svg"
+                            alt=""
+                        />
+                        <div class="header__title text--xl">
+                            <span class="text--bold text--lg">Alura</span>Books
                         </div>
+                    </a>
+                    <nav class="header__navbar">
+                        <ul class="header__list">
+                            <div id="categoryWrapper">
+                                <li>
+                                    <button
+                                        id="categoriesToggle"
+                                        class="header__button"
+                                    >
+                                        CATEGORIES
+                                    </button>
+                                </li>
+                                <ul
+                                    class="dropdown-category__list"
+                                    id="categoryList"
+                                >
+                                    <li class="dropdown-category__item">
+                                        <a
+                                            href="#"
+                                            class="dropdown-category__link"
+                                            >PROGRAMMING</a
+                                        >
+                                    </li>
+                                    <li class="dropdown-category__item">
+                                        <a
+                                            href="#"
+                                            class="dropdown-category__link"
+                                            >FRONT-END</a
+                                        >
+                                    </li>
+                                    <li class="dropdown-category__item">
+                                        <a
+                                            href="#"
+                                            class="dropdown-category__link"
+                                            >INFRASTRUCTURE</a
+                                        >
+                                    </li>
+                                    <li class="dropdown-category__item">
+                                        <a
+                                            href="#"
+                                            class="dropdown-category__link"
+                                            >BUSINESS</a
+                                        >
+                                    </li>
+                                    <li class="dropdown-category__item">
+                                        <a
+                                            href="#"
+                                            class="dropdown-category__link"
+                                            >DESIGN & UX</a
+                                        >
+                                    </li>
+                                </ul>
+                            </div>
+                            <li>
+                                <button class="header__button">
+                                    FAVORITES
+                                </button>
+                            </li>
+                            <li>
+                                <button class="header__button">
+                                    MY BOOKSHELF
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="header__icon text--3xl">
+                        <button class="header--heart">
+                            <span class="icon-font header__icon--heart"
+                                >&#xf003;</span
+                            >
+                        </button>
+                        <button class="header--bag">
+                            <span class="icon-font header__icon--bag"
+                                >&#xf000;</span
+                            >
+                            <div class="header__icon--detail text--rg">
+                                My Bag
+                            </div>
+                        </button>
+                        <button class="header--profile">
+                            <span class="icon-font header__icon--profile"
+                                >&#xf001;</span
+                            >
+                            <div class="header__icon--detail text--rg">
+                                My Profile
+                            </div>
+                        </button>
                     </div>
                 </div>
-            </div>
-        </header>
-
-        <div class="hero"></div>
+            </header>
+        </div>
         <script type="module" src="./src/script/index.js"></script>
     </body>
 </html>

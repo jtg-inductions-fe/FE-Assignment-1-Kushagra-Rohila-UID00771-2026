@@ -15,7 +15,6 @@
     @return map.get(vars.$breakpoints, $key);
 }
 
-// Generate classes dynamically in rem
 @each $name, $value in vars.$sizes {
     .text--#{$name} {
         font-size: px-to-rem($value);
