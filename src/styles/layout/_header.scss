@@ -89,6 +89,9 @@
     &__button {
         @include mixn.size(func.px_to_rem(117px), func.px_to_rem(44px));
         padding: func.px_to_rem(10px) 0;
+        &:hover {
+            @extend .color--blue;
+        }
     }
 
     &__icon {
@@ -197,7 +200,7 @@
     &__link {
         display: block;
         background-color: func.color('white');
-        padding: 0 func.px_to_rem(30px);
+        padding: 0 func.px_to_rem(25px);
         align-content: center;
         @include mixn.size(func.px_to_rem(181px), func.px_to_rem(64px));
 
