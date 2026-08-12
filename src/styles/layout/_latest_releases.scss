@@ -16,8 +16,7 @@
     &__article {
         padding: 0.9rem 0.8rem;
         @include mixn.respond-to('tablet') {
-            width: func.px_to_rem(580px);
-            height: func.px_to_rem(266px);
+            @include mixn.size(func.px_to_rem(580px), func.px_to_rem(266px));
             margin-top: 3.8rem;
         }
 
@@ -122,6 +121,14 @@
         @include mixn.size(func.px_to_rem(161px), func.px_to_rem(48px));
         color: func.color('white');
 
+        @include mixn.respond-to('tablet') {
+            @include mixn.size(func.px_to_rem(146px), func.px_to_rem(48px));
+        }
+    }
+    &__button {
+        background-color: func.color('yellow');
+        @include mixn.size(func.px_to_rem(161px), func.px_to_rem(48px));
+        color: func.color('white');
         @include mixn.respond-to('tablet') {
             @include mixn.size(func.px_to_rem(146px), func.px_to_rem(48px));
         }
