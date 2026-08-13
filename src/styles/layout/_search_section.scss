@@ -3,11 +3,11 @@
 @use '../abstracts/mixins' as mixn;
 @use '../abstracts/placeholders';
 
-.find-section {
-    color: func.color('white');
-    background-image: vars.$gradient-blue;
+.search-section {
     @include mixn.size(auto, func.px_to_rem(215px));
     @include mixn.flex(column, center, center, nowrap);
+    color: func.color('white');
+    background-image: vars.$gradient-blue;
     gap: func.px_to_rem(7px);
 
     @include mixn.respond-to('tablet') {
@@ -32,16 +32,17 @@
     }
 
     &__form {
+        @include mixn.size(auto, func.px_to_rem(44px));
         position: relative;
-        margin-top: 18px;
+        margin: func.px_to_rem(18px) func.px_to_rem(20px) 0 func.px_to_rem(20px);
         text-align: center;
-        @include mixn.size(func.px_to_rem(380px), func.px_to_rem(44px));
         border-radius: func.px_to_rem(24px);
         border: func.px_to_rem(1px) solid func.color('white');
-        padding: func.px_to_rem(10px) 4rem;
+        padding: func.px_to_rem(10px) func.px_to_rem(64px);
         @include mixn.respond-to('tablet') {
-            margin-top: 0;
-            @include mixn.size(func.px_to_rem(476px), func.px_to_rem(56px));
+            margin-top: 0.2rem;
+            padding: func.px_to_rem(10px) func.px_to_rem(80px);
+            @include mixn.size(auto, func.px_to_rem(56px));
         }
         @include mixn.respond-to('desktop') {
             @include mixn.size(func.px_to_rem(586px), func.px_to_rem(56px));
@@ -53,11 +54,11 @@
         @include mixn.size(100%, 100%);
         color: func.color('white');
         text-align: center;
-        &:focus + .find-section__label,
-        &:not(:placeholder-shown) + .find-section__label {
+        &:focus + .search-section__label,
+        &:not(:placeholder-shown) + .search-section__label {
             justify-content: flex-start;
             padding-left: 1rem;
-            .find-section__search-text {
+            .search-section__search-text {
                 opacity: 0;
                 visibility: hidden;
             }

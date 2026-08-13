@@ -13,6 +13,7 @@
         @include mixn.size(func.px_to_rem(80px));
         @include mixn.flex(row, center, center, nowrap);
         position: relative;
+        cursor: pointer;
 
         @include mixn.respond-to('tablet') {
             display: none;
@@ -88,6 +89,8 @@
     &__button {
         @include mixn.size(func.px_to_rem(117px), func.px_to_rem(44px));
         padding: func.px_to_rem(10px) 0;
+        cursor: pointer;
+
         &:hover {
             @extend %bg-blue;
         }
@@ -117,6 +120,7 @@
     &__heart {
         @include mixn.flex(row, center, center, nowrap);
         @include mixn.size(func.px_to_rem(40px), func.px_to_rem(40px));
+        cursor: pointer;
 
         @include mixn.respond-to('tablet') {
             display: none;
@@ -126,6 +130,7 @@
     &__profile {
         @include mixn.flex(row, center, center, nowrap);
         @include mixn.size(func.px_to_rem(40px), func.px_to_rem(40px));
+        cursor: pointer;
 
         @include mixn.respond-to('desktop') {
             gap: func.px_to_rem(8px);
@@ -136,6 +141,7 @@
     &__bag {
         @include mixn.flex(row, center, center, nowrap);
         @include mixn.size(func.px_to_rem(40px), func.px_to_rem(40px));
+        cursor: pointer;
 
         @include mixn.respond-to('desktop') {
             gap: func.px_to_rem(10px);
