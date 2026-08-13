@@ -23,11 +23,6 @@ ul {
     padding: 0;
 }
 
-html {
-    background-color: func.color('gray-dark');
-    padding: 5rem;
-}
-
 body {
     @include mixn.flex();
     background-color: func.color('white');
