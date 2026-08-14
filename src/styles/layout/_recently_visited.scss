@@ -4,7 +4,7 @@
 
 .recently-visited {
     @include mixn.flex(column, center, center, nowrap);
-    padding: 1.5rem 0;
+    padding: 1.5rem 0.4rem;
     background-image: vars.$gradient-blue;
     gap: 2rem;
     @include mixn.respond-to('tablet') {
