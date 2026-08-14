@@ -10,7 +10,6 @@
 
         @include mixn.respond-to('desktop') {
             align-items: flex-start;
-            padding-left: 10.8rem;
             padding-top: 2.2rem;
             gap: 1.9rem;
         }

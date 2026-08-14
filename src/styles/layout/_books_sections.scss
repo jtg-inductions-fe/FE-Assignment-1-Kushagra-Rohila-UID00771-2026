@@ -39,11 +39,12 @@
 
         background-color: func.color('gray-light');
         @include mixn.respond-to('tablet') {
-            @include mixn.size(100%, func.px_to_rem(760px));
             @include mixn.flex(column, center, baseline, nowrap);
+            @include mixn.size(100%, func.px_to_rem(760px));
         }
 
         @include mixn.respond-to('desktop') {
+            padding-left: 10.8rem;
             flex-direction: row;
             @include mixn.size(100%, func.px_to_rem(508px));
         }
@@ -53,6 +54,7 @@
         @include mixn.flex(row, center, space-between, nowrap);
         @include mixn.size(auto, auto);
         box-sizing: border-box;
+        box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.2);
         margin: 1.7rem 1.55rem;
         background-color: func.color('white');
         border-radius: func.px_to_rem(10px);

@@ -5,12 +5,10 @@
 
 @import '@splidejs/splide/css';
 
-// Base slide styling for visuals
 .splide__slide {
     img {
         height: func.px_to_rem(249px);
         width: func.px_to_rem(179px);
-        box-shadow: 0.1rem 0.1rem 1rem 0rem rgba(0, 0, 0, 0.5);
         box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.2);
         @include mixn.respond-to('tablet') {
             height: func.px_to_rem(265px);
@@ -23,7 +21,6 @@
     }
 }
 
-// Carousel wrapper structural tuning
 .splide {
     position: relative;
     padding-top: func.px_to_rem(32px);
@@ -83,7 +80,6 @@
             background: func.color('black');
         }
 
-        // Specific left/right offset placements
         &--prev {
             left: 0;
         }
@@ -93,7 +89,6 @@
         }
     }
 
-    // Circular Tracker Dots Styling
     &__pagination {
         position: absolute;
         top: 0;
@@ -113,7 +108,7 @@
             display: block;
             width: func.px_to_rem(8px);
             height: func.px_to_rem(8px);
-            border-radius: 50%; // Makes them perfect circles
+            border-radius: 50%;
             background: func.color('gray-medium');
             cursor: pointer;
             transition:
@@ -128,7 +123,6 @@
                 background: func.color('gray-dark');
             }
 
-            // Active selected state style rules
             &.is-active {
                 background: func.color('primary');
                 width: func.px_to_rem(8px);

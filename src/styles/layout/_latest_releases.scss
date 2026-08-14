@@ -9,7 +9,6 @@
         }
 
         @include mixn.respond-to('desktop') {
-            padding-left: 11rem;
             gap: 1.1rem;
         }
     }
