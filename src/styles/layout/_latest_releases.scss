@@ -7,14 +7,18 @@
         @include mixn.respond-to('tablet') {
             align-items: center;
         }
+
         @include mixn.respond-to('desktop') {
             padding-left: 11rem;
-            padding-top: 1rem;
             gap: 1.1rem;
         }
     }
+
     &__article {
         padding: 0.9rem 0.8rem;
+        max-width: 100%;
+        box-sizing: border-box;
+
         @include mixn.respond-to('tablet') {
             @include mixn.size(func.px_to_rem(580px), func.px_to_rem(266px));
             margin-top: 3.8rem;
@@ -125,10 +129,35 @@
             @include mixn.size(func.px_to_rem(146px), func.px_to_rem(48px));
         }
     }
+
+    &__article-right {
+        gap: 2.2rem;
+        margin: func.px_to_rem(5px);
+
+        @include mixn.respond-to('tablet') {
+            align-items: end;
+            gap: 1.2rem;
+        }
+
+        @include mixn.respond-to('desktop') {
+            gap: 2.4rem;
+            margin: 0rem 0.2rem 0 0;
+        }
+    }
+
+    &__article-img {
+        @include mixn.size(100%, func.px_to_rem(168px));
+
+        @include mixn.respond-to('tablet') {
+            @include mixn.size(func.px_to_rem(146px), func.px_to_rem(150px));
+        }
+    }
+
     &__button {
         background-color: func.color('yellow');
-        @include mixn.size(func.px_to_rem(161px), func.px_to_rem(48px));
+        @include mixn.size(100%, func.px_to_rem(48px));
         color: func.color('white');
+
         @include mixn.respond-to('tablet') {
             @include mixn.size(func.px_to_rem(146px), func.px_to_rem(48px));
         }
