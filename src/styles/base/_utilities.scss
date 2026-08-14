@@ -1,6 +1,5 @@
-@use '../abstracts/functions' as func;
+@use '../abstracts/placeholders';
 
-.color--blue {
-    color: func.color('white');
-    background-color: func.color('primary');
+.bg-blue {
+    @extend %bg-blue;
 }

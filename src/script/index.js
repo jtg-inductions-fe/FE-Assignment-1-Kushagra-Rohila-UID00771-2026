@@ -3,17 +3,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const categoriesMenu = document.getElementById('categoriesMenu');
     const categoriesToggle = document.getElementById('categoriesToggle');
     const categoryList = document.getElementById('categoryList');
+    const categoryWrapper = document.getElementById('categoryWrapper');
 
     document.addEventListener('click', (e) => {
         if (e.target.closest('#menuToggle')) {
             categoriesMenu.classList.toggle('dropdown-menu--active');
-            menuToggle.classList.toggle('color--blue');
+            menuToggle.classList.toggle('bg-blue');
             return; // Exit early
         }
 
         if (e.target.closest('#categoriesToggle')) {
             categoryList.classList.toggle('dropdown-category__list--active');
-            categoriesToggle.classList.toggle('color--blue');
             return;
         }
 
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             !menuToggle.contains(e.target)
         ) {
             categoriesMenu.classList.remove('dropdown-menu--active');
-            menuToggle.classList.remove('color--blue');
+            menuToggle.classList.remove('bg-blue');
         }
 
         if (
@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
             !categoriesToggle.contains(e.target)
         ) {
             categoryList.classList.remove('dropdown-category_list--active');
-            categoriesToggle.classList.remove('color--blue');
         }
     });
 
@@ -54,17 +53,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 0);
     });
 
-    const categoryWrapper = document.getElementById('categoryWrapper');
-
     if (categoryWrapper) {
         categoryWrapper.addEventListener('mouseenter', () => {
             categoryList.classList.add('dropdown-category__list--active');
-            categoriesToggle.classList.add('color--blue');
+            categoriesToggle.classList.add('bg-blue');
         });
 
         categoryWrapper.addEventListener('mouseleave', () => {
             categoryList.classList.remove('dropdown-category__list--active');
-            categoriesToggle.classList.remove('color--blue');
+            categoriesToggle.classList.remove('bg-blue');
         });
     }
 });
