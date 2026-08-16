@@ -28,17 +28,15 @@
     }
 
     &__topics {
-        display: flex;
-        flex-wrap: wrap;
+        @include mixn.flex(row, normal, center, wrap);
         gap: 0.8rem 1rem;
-        justify-content: center;
         @include mixn.respond-to('tablet') {
             gap: 1.2rem 2rem;
-            width: func.px_to_rem(732px);
+            @include mixn.size(func.px_to_rem(732px), auto);
         }
         @include mixn.respond-to('tablet') {
             gap: 1.2rem 1.5rem;
-            width: func.px_to_rem(850px);
+            @include mixn.size(func.px_to_rem(850px), auto);
         }
     }
 
