@@ -14,8 +14,8 @@
     height: $height;
 }
 
-@mixin transition($property: all, $duration: 0.2s, $easing: ease-in-out) {
-    transition: $property $duration $easing;
+@mixin transition($args...) {
+    transition: $args;
 }
 
 @mixin respond-to($breakpoint) {
