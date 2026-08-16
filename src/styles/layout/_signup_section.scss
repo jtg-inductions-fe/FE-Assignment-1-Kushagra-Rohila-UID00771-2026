@@ -20,7 +20,7 @@
     }
 
     &__content {
-        @include mixn.flex(column, flex-start, baseline, nowrap);
+        @include mixn.flex(column, normal, normal, nowrap);
         gap: 0.8rem;
         @include mixn.respond-to('tablet') {
             @include mixn.size(func.px_to_rem(376px), auto);
@@ -56,13 +56,11 @@
         gap: 0.7rem;
         @include mixn.respond-to('tablet') {
             @include mixn.size(func.px_to_rem(327px), func.px_to_rem(44px));
-
             padding: 0 1.5rem;
         }
         @include mixn.respond-to('desktop') {
-            @include mixn.size(func.px_to_rem(327px), func.px_to_rem(44px));
+            @include mixn.size(func.px_to_rem(349px), func.px_to_rem(44px));
             margin-top: 1.5rem;
-            width: func.px_to_rem(349px);
         }
     }
 }
