@@ -46,6 +46,7 @@
 
         @include mixn.respond-to('desktop') {
             padding-left: 10.8rem;
+            gap: 2rem;
             flex-direction: row;
             @include mixn.size(100%, func.px_to_rem(508px));
         }
