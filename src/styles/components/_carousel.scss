@@ -1,0 +1,118 @@
+// Pull in the default layout engine from npm node_modules
+@use '../abstracts/functions' as func;
+@use '../abstracts/mixins' as mixn;
+@use '../abstracts/variables' as vars;
+
+@import '@splidejs/splide/css';
+
+.splide__slide {
+    img {
+        @include mixn.size(func.px_to_rem(179px), func.px_to_rem(249px));
+        box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.2);
+        @include mixn.respond-to('tablet') {
+            @include mixn.size(func.px_to_rem(192px), func.px_to_rem(265px));
+        }
+        @include mixn.respond-to('desktop') {
+            @include mixn.size(func.px_to_rem(180px), func.px_to_rem(254px));
+        }
+    }
+}
+
+.splide {
+    position: relative;
+    padding-top: func.px_to_rem(32px);
+    @include mixn.respond-to('tablet') {
+        @include mixn.flex(row, normal, center, nowrap);
+        @include mixn.size(func.px_to_rem(800px), func.px_to_rem(388px));
+        padding-top: func.px_to_rem(120px);
+    }
+    @include mixn.respond-to('desktop') {
+        @include mixn.size(func.px_to_rem(745px), func.px_to_rem(388px));
+        padding: 0 2.2rem;
+        padding-top: 4rem;
+    }
+
+    &__list {
+        @include mixn.respond-to('tablet') {
+            @include mixn.size(func.px_to_rem(725px), func.px_to_rem(388px));
+        }
+    }
+
+    &__arrows {
+        display: none;
+        @include mixn.respond-to('tablet') {
+            display: block;
+        }
+    }
+
+    &__arrow {
+        @include mixn.size(func.px_to_rem(48px), func.px_to_rem(48px));
+        @include mixn.transition(background-color 0.2s ease, opacity 0.2s ease);
+        position: absolute;
+        background-image: vars.$gradient-blue;
+        border-radius: 50%;
+        top: 15.11rem;
+        opacity: 1;
+        z-index: 10;
+        @include mixn.respond-to('desktop') {
+            top: 12rem;
+        }
+
+        svg {
+            fill: func.color('white');
+            @include mixn.size(func.px_to_rem(18px), func.px_to_rem(18px));
+            @include mixn.transition(fill 0.2s ease);
+        }
+
+        &:hover {
+            background: func.color('black');
+        }
+
+        &--prev {
+            left: 0;
+        }
+
+        &--next {
+            right: 0;
+        }
+    }
+
+    &__pagination {
+        position: absolute;
+        top: 0;
+        bottom: auto;
+        z-index: 10;
+        padding: func.px_to_rem(8px);
+        @include mixn.respond-to('tablet') {
+            padding: func.px_to_rem(24px);
+            gap: 0.4rem;
+        }
+        @include mixn.respond-to('desktop') {
+            padding: func.px_to_rem(12px);
+            gap: 0.4rem;
+        }
+
+        &__page {
+            display: block;
+            @include mixn.size(func.px_to_rem(8px), func.px_to_rem(8px));
+            border-radius: 50%;
+            background: func.color('gray-medium');
+            @include mixn.transition(
+                transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                background-color 0.25s ease
+            );
+            @include mixn.respond-to('tablet') {
+                @include mixn.size(func.px_to_rem(12px), func.px_to_rem(12px));
+            }
+
+            &:hover {
+                background: func.color('gray-dark');
+            }
+
+            &.is-active {
+                background: func.color('primary');
+                @include mixn.size(func.px_to_rem(10px), func.px_to_rem(10px));
+            }
+        }
+    }
+}
