@@ -46,3 +46,9 @@ $breakpoints: (
     'tablet': 1024px,
     'desktop': 1728px,
 );
+
+:export {
+    mobile: map.get($breakpoints, 'mobile');
+    tablet: map.get($breakpoints, 'tablet');
+    desktop: map.get($breakpoints, 'desktop');
+}
