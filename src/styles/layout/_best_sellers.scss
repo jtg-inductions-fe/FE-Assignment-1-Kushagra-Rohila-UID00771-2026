@@ -1,5 +1,4 @@
 @use '../abstracts/functions' as func;
-@use '../abstracts/variables' as vars;
 @use '../abstracts/mixins' as mixn;
 
 .best-sellers {
@@ -13,8 +12,10 @@
         border-radius: func.px_to_rem(10px);
         gap: func.px_to_rem(10px);
         padding: 1.25rem 0.8rem;
+        max-width: func.px_to_rem(380px);
 
         @include mixn.respond-to('tablet') {
+            max-width: none;
             @include mixn.size(func.px_to_rem(580px), func.px_to_rem(266px));
             margin-top: 3.48rem;
             padding: 0.8rem;
@@ -28,7 +29,7 @@
         }
     }
 
-    &__article-left {
+    &__article-text {
         @include mixn.flex(column, normal, normal, nowrap);
         flex: 1;
 
@@ -44,7 +45,7 @@
         }
     }
 
-    &__article-right {
+    &__article-content {
         @include mixn.flex(column, normal, normal, nowrap);
 
         margin: func.px_to_rem(5px) func.px_to_rem(5px) 0 0;

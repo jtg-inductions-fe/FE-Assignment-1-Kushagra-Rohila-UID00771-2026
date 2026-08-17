@@ -26,6 +26,7 @@
     &__details {
         @include mixn.size(func.px_to_rem(316px), func.px_to_rem(48px));
         text-align: center;
+        overflow: hidden;
         @include mixn.respond-to('tablet') {
             @include mixn.size(100%, func.px_to_rem(48px));
         }
@@ -66,6 +67,7 @@
     }
 
     &__label {
+        cursor: text;
         color: func.color('white');
         @extend %full-overlay;
         @include mixn.flex(row, center, center, nowrap);

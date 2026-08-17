@@ -17,7 +17,7 @@
 
             <header class="header">
                 <button class="header__menu" id="menuToggle">
-                    <span class="icon-font text--lg">&#xf006;</span>
+                    <span class="menu-icon text--lg"></span>
                 </button>
                 <nav class="dropdown-menu" id="categoriesMenu">
                     <ul class="dropdown-menu__list">
@@ -50,7 +50,7 @@
                     </ul>
                 </nav>
 
-                <div class="header__inner">
+                <div class="header__content">
                     <a href="/" class="header__brand">
                         <img
                             class="header__logo-img"
@@ -127,16 +127,16 @@
                     </nav>
                     <div class="header__icons text--3xl">
                         <button class="header__heart">
-                            <span class="icon-font">&#xf003;</span>
+                            <span class="heart-icon"></span>
                         </button>
                         <button class="header__bag">
-                            <span class="icon-font">&#xf000;</span>
+                            <span class="bag-icon"></span>
                             <div class="header__icon-detail text--rg">
                                 My Bag
                             </div>
                         </button>
                         <button class="header__profile">
-                            <span class="icon-font">&#xf001;</span>
+                            <span class="profile-icon"></span>
                             <div class="header__icon-detail text--rg">
                                 My Profile
                             </div>
@@ -162,7 +162,7 @@
                             placeholder=" "
                         />
                         <label for="search" class="search-section__label">
-                            <span class="icon-font text--sm">&#xf002;</span>
+                            <span class="search-icon text--sm"></span>
                             <span class="search-section__search-text"
                                 >What will your next read be?</span
                             >
@@ -174,7 +174,7 @@
                     <h1 class="latest-releases__heading">LATEST RELEASES</h1>
                     <div class="latest-releases__content">
                         <div
-                            id="latest-releases--carousel"
+                            id="latest-releases__carousel"
                             class="splide"
                             aria-label="Product Showcase"
                         >
@@ -257,31 +257,29 @@
                             </div>
                         </div>
                         <article class="latest-releases__article">
-                            <div class="latest-releases__article-left">
-                                <h2 class="latest-releases__article-h2">
+                            <div class="latest-releases__article-text">
+                                <h2 class="latest-releases__article-heading">
                                     You might also be interested in...
                                 </h2>
-                                <h3 class="latest-releases__article-h3">
+                                <h3 class="latest-releases__article-subheading">
                                     Angular 11 and Firebase
                                 </h3>
-                                <p>
+                                <p class="latest-releases__article-detail">
                                     Building an application integrated with the
                                     Google platform.
                                 </p>
                                 <div class="latest-releases__icons">
                                     <button>
-                                        <span class="icon-font text--lg"
-                                            >&#xf003;</span
-                                        >
+                                        <span
+                                            class="heart-icon text--lg"
+                                        ></span>
                                     </button>
                                     <button>
-                                        <span class="icon-font text--lg"
-                                            >&#xf000;</span
-                                        >
+                                        <span class="bag-icon text--lg"></span>
                                     </button>
                                 </div>
                             </div>
-                            <div class="latest-releases__article-right">
+                            <div class="latest-releases__article-content">
                                 <img
                                     class="latest-releases__article-img"
                                     src="/assets/images/Perfil-escritora 2.webp"
@@ -301,7 +299,7 @@
                     <h1 class="best-sellers__heading">BEST-SELLERS</h1>
                     <div class="best-sellers__content">
                         <div
-                            id="best-sellers--carousel"
+                            id="best-sellers__carousel"
                             class="splide"
                             aria-label="Product Showcase"
                         >
@@ -384,48 +382,36 @@
                             </div>
                         </div>
                         <article class="best-sellers__article">
-                            <div class="best-sellers__article-left">
+                            <div class="best-sellers__article-text">
                                 <div class="best-sellers__article-stars">
-                                    <span class="icon-font text--2xs"
-                                        >&#xf004;</span
-                                    >
-                                    <span class="icon-font text--2xs"
-                                        >&#xf004;</span
-                                    >
-                                    <span class="icon-font text--2xs"
-                                        >&#xf004;</span
-                                    >
-                                    <span class="icon-font text--2xs"
-                                        >&#xf004;</span
-                                    >
-                                    <span class="icon-font text--2xs"
-                                        >&#xf004;</span
-                                    >
+                                    <span class="star-icon text--2xs"></span>
+                                    <span class="star-icon text--2xs"></span>
+                                    <span class="star-icon text--2xs"></span>
+                                    <span class="star-icon text--2xs"></span>
+                                    <span class="star-icon text--2xs"></span>
                                 </div>
-                                <h2 class="best-sellers__article-h2">
+                                <h2 class="best-sellers__article-heading">
                                     Author of the Month
                                 </h2>
-                                <h3 class="best-sellers__article-h3">
+                                <h3 class="best-sellers__article-subheading">
                                     Juliana Agarikov
                                 </h3>
-                                <p>
+                                <p class="best-sellers__article-detail">
                                     A systems analyst and writer, Juliana
                                     specializes in front-end development.
                                 </p>
                                 <div class="best-sellers__icons">
                                     <button>
-                                        <span class="icon-font text--lg"
-                                            >&#xf003;</span
-                                        >
+                                        <span
+                                            class="heart-icon text--lg"
+                                        ></span>
                                     </button>
                                     <button>
-                                        <span class="icon-font text--lg"
-                                            >&#xf000;</span
-                                        >
+                                        <span class="bag-icon text--lg"></span>
                                     </button>
                                 </div>
                             </div>
-                            <div class="best-sellers__article-right">
+                            <div class="best-sellers__article-content">
                                 <img
                                     class="best-sellers__article-img"
                                     src="/assets/images/Perfil-escritora 1.webp"
@@ -494,105 +480,105 @@
                         </p>
                     </div>
                     <button class="sign-up__button">
-                        <span class="icon-font">&#xf005;</span>
+                        <span class="mail-icon"></span>
                         <span>Sign up with your email</span>
                     </button>
                 </section>
             </main>
             <hr />
             <footer class="footer">
-                <h1 class="text--regular">Alura Group</h1>
+                <h2 class="text--regular">Alura Group</h2>
                 <div class="footer__content">
                     <div class="footer__column">
-                        <h2 class="text--regular">EDUCATION</h2>
-                        <button>
+                        <h3 class="text--regular">EDUCATION</h3>
+                        <a href="#">
                             <img src="/assets/icons/Caelum.svg" alt="" />
                             <span>Caelum</span>
-                        </button>
-                        <button>
+                        </a>
+                        <a href="#">
                             <img
                                 src="/assets/icons/Casa do codigo.svg"
                                 alt=""
                             />
                             <span>Casa do Código</span>
-                        </button>
+                        </a>
                     </div>
                     <div class="footer__column">
-                        <h2 class="text--regular">ONLINE EDUCATION</h2>
-                        <button>
+                        <h3 class="text--regular">ONLINE EDUCATION</h3>
+                        <a href="#">
                             <img src="/assets/icons/Alura.svg" alt="" />
                             <span>Alura</span>
-                        </button>
-                        <button>
+                        </a>
+                        <a href="#">
                             <img
                                 src="/assets/icons/Alura para empresas.svg"
                                 alt=""
                             />
                             <span>Alura Para Empresas</span>
-                        </button>
-                        <button>
+                        </a>
+                        <a href="#">
                             <img src="/assets/icons/Alura.svg" alt="" />
                             <span>Alura LATAM</span>
-                        </button>
-                        <button>
+                        </a>
+                        <a href="#">
                             <img src="/assets/icons/Alura start.svg" alt="" />
                             <span>Alura Start</span>
-                        </button>
-                        <button>
+                        </a>
+                        <a href="#">
                             <img src="/assets/icons/Music dot.svg" alt="" />
                             <span>MusicDot</span>
-                        </button>
-                        <button>
+                        </a>
+                        <a href="#">
                             <img src="/assets/icons/Alura Lingua.svg" alt="" />
                             <span>Alura Lingua</span>
-                        </button>
-                        <button>
+                        </a>
+                        <a href="#">
                             <img src="/assets/icons/PM3.svg" alt="" />
                             <span>PM3</span>
-                        </button>
+                        </a>
                     </div>
                     <div class="footer__column">
-                        <h2 class="text--regular">COMMUNITY</h2>
-                        <button>
+                        <h3 class="text--regular">COMMUNITY</h3>
+                        <a href="#">
                             <img
                                 src="/assets/icons/Hipsters Ponto tech.svg"
                                 alt=""
                             />
                             <span>Hipsters ponto Tech</span>
-                        </button>
-                        <button>
+                        </a>
+                        <a href="#">
                             <img src="/assets/icons/Scuba dev.svg" alt="" />
                             <span>Scuba Dev</span>
-                        </button>
-                        <button>
+                        </a>
+                        <a href="#">
                             <img
                                 src="/assets/icons/Layers ponto tech.svg"
                                 alt=""
                             />
                             <span>Layers ponto Tech</span>
-                        </button>
-                        <button>
+                        </a>
+                        <a href="#">
                             <img src="/assets/icons/Like a boss.svg" alt="" />
                             <span>Like a Boss</span>
-                        </button>
-                        <button>
+                        </a>
+                        <a href="#">
                             <img
                                 src="/assets/icons/Carreira sem fronteira.svg"
                                 alt=""
                             />
                             <span>Carreira sem Fronteira</span>
-                        </button>
-                        <button>
+                        </a>
+                        <a href="#">
                             <img
                                 src="/assets/icons/Hipsters ponto jobs.svg"
                                 alt=""
                             />
                             <span>Hipsters ponto Jobs</span>
-                        </button>
-                        <button>
+                        </a>
+                        <a href="#">
                             <img src="/assets/icons/GUJ.svg" alt="" />
                             <span>GUJ</span>
-                        </button>
+                        </a>
                     </div>
                 </div>
             </footer>

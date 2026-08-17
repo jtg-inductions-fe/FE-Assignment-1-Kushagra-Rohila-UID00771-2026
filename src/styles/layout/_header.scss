@@ -22,7 +22,7 @@
         }
     }
 
-    &__inner {
+    &__content {
         @include mixn.flex(row, center, space-between, nowrap);
         flex: 1;
         padding: 0 func.px_to_rem(16px);
@@ -80,14 +80,11 @@
             padding: 0.5rem 0;
             gap: 1.2rem;
         }
-
-        @include mixn.respond-to('desktop') {
-        }
     }
 
     &__button {
-        @include mixn.size(func.px_to_rem(117px), func.px_to_rem(44px));
-        padding: func.px_to_rem(10px) 0;
+        @include mixn.size(auto, func.px_to_rem(44px));
+        padding: func.px_to_rem(10px);
 
         &:hover {
             @extend %bg-blue;
@@ -125,7 +122,7 @@
 
         @include mixn.respond-to('desktop') {
             gap: func.px_to_rem(8px);
-            @include mixn.size(auto, func.px_to_rem(40px));
+            @include mixn.size(auto, auto);
         }
     }
 
@@ -135,7 +132,7 @@
 
         @include mixn.respond-to('desktop') {
             gap: func.px_to_rem(10px);
-            @include mixn.size(auto, func.px_to_rem(40px));
+            @include mixn.size(auto, auto);
         }
     }
 

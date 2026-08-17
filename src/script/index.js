@@ -1,5 +1,4 @@
 import Splide from '@splidejs/splide';
-import '../styles/main.scss';
 
 function attachWheelControl(splideInstance) {
     let isScrolling = false;
@@ -60,8 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
             },
         },
     };
-    const carousel1 = new Splide('#latest-releases--carousel', sliderConfig);
-    const carousel2 = new Splide('#best-sellers--carousel', sliderConfig);
+    const carousel1 = new Splide('#latest-releases__carousel', sliderConfig);
+    const carousel2 = new Splide('#best-sellers__carousel', sliderConfig);
 
     document.addEventListener('click', (e) => {
         if (e.target.closest('#menuToggle')) {

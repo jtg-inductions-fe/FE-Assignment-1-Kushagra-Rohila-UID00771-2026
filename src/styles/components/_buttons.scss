@@ -1,3 +1,8 @@
+@use '../abstracts/functions' as func;
+
 button {
     cursor: pointer;
+    &:hover {
+        background-color: func.color('gray-dark');
+    }
 }

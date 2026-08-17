@@ -37,19 +37,22 @@
             gap: 1rem;
         }
 
-        button {
+        a {
             @include mixn.flex(row, center, normal, nowrap);
             gap: 0.4rem;
+            &:hover {
+                background-color: func.color('gray-light');
+            }
         }
     }
 
-    h1 {
+    h2 {
         font-size: func.size(xs);
         @include mixn.respond-to('tablet') {
             font-size: func.size(rg);
         }
     }
-    h2 {
+    h3 {
         color: func.color('gray-dark');
         font-size: inherit;
         padding: 0 0 0.8rem 0;

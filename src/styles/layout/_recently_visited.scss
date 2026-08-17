@@ -28,9 +28,11 @@
     }
 
     &__topics {
+        max-width: func.px_to_rem(400px);
         @include mixn.flex(row, normal, center, wrap);
         gap: 0.8rem 1rem;
         @include mixn.respond-to('tablet') {
+            max-width: none;
             gap: 1.2rem 2rem;
             @include mixn.size(func.px_to_rem(732px), auto);
         }

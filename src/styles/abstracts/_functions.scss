@@ -21,7 +21,7 @@
 
 @each $name, $value in vars.$sizes {
     .text--#{$name} {
-        font-size: px-to-rem($value);
+        font-size: px_to_rem($value);
     }
 }
 @each $name, $value in vars.$weights {

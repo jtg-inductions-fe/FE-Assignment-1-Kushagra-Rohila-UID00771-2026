@@ -33,3 +33,37 @@ $font: 'AluraBooks';
     font-palette: --palette0;
     color: currentcolor;
 }
+.menu-icon::before {
+    font-family: $font;
+    content: '#{'\f006'}';
+}
+
+.profile-icon::before {
+    font-family: $font;
+    content: '#{'\f001'}';
+}
+
+.heart-icon::before {
+    font-family: $font;
+    content: '#{'\f003'}';
+}
+
+.bag-icon::before {
+    font-family: $font;
+    content: '#{'\f000'}';
+}
+
+.search-icon::before {
+    font-family: $font;
+    content: '#{'\f002'}';
+}
+
+.star-icon::before {
+    font-family: $font;
+    content: '#{'\f004'}';
+}
+
+.mail-icon::before {
+    font-family: $font;
+    content: '#{'\f005'}';
+}

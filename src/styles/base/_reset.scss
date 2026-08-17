@@ -34,13 +34,6 @@ body {
     width: 100%;
     margin: 0 auto;
     padding: 0;
-    @include mixn.respond-to('mobile') {
-        max-width: func.breakpoint('mobile');
-    }
-
-    @include mixn.respond-to('tablet') {
-        max-width: func.breakpoint('tablet');
-    }
 
     @include mixn.respond-to('desktop') {
         max-width: func.breakpoint('desktop');
