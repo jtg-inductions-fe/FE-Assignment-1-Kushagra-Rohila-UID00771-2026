@@ -1,0 +1,211 @@
+@use '../abstracts/mixins' as mixn;
+@use '../abstracts/functions' as func;
+@use '../abstracts/variables' as vars;
+@use '../abstracts/placeholders';
+
+.header {
+    @include mixn.size(100%, func.px_to_rem(80px));
+    @include mixn.flex(row, center, center, nowrap);
+    background-color: func.color('white');
+    position: relative;
+
+    &__menu {
+        @include mixn.size(func.px_to_rem(80px));
+        @include mixn.flex(row, center, center, nowrap);
+        position: relative;
+
+        @include mixn.respond-to('tablet') {
+            display: none;
+        }
+
+        &:hover {
+            @extend %bg-blue;
+        }
+    }
+
+    &__inner {
+        @include mixn.flex(row, center, space-between, nowrap);
+        flex: 1;
+        padding: 0 func.px_to_rem(16px);
+
+        @include mixn.respond-to('tablet') {
+            padding: func.px_to_rem(10px) func.px_to_rem(78px) 0
+                func.px_to_rem(78px);
+        }
+
+        @include mixn.respond-to('desktop') {
+            padding: func.px_to_rem(78px);
+        }
+    }
+
+    &__brand {
+        @include mixn.flex(row, flex-end, flex-start, nowrap);
+        @include mixn.size(auto, func.px_to_rem(40px));
+
+        @include mixn.respond-to('tablet') {
+            @include mixn.size(func.px_to_rem(264px), auto);
+            gap: 0.5rem;
+        }
+    }
+
+    &__title {
+        display: none;
+        font-family: 'Josefin Sans', sans-serif;
+        letter-spacing: func.px_to_rem(2px);
+
+        span {
+            font-family: inherit;
+        }
+
+        @include mixn.respond-to('tablet') {
+            display: block;
+        }
+    }
+
+    &__navbar {
+        display: none;
+        position: relative;
+
+        @include mixn.respond-to('tablet') {
+            @include mixn.flex(row, center, center, nowrap);
+            flex: 1;
+        }
+    }
+
+    &__list {
+        @include mixn.size(100%, auto);
+        @include mixn.flex(row, center, flex-start, nowrap);
+        gap: func.px_to_rem(20px);
+
+        @include mixn.respond-to('tablet') {
+            padding: 0.5rem 0;
+            gap: 1.2rem;
+        }
+
+        @include mixn.respond-to('desktop') {
+        }
+    }
+
+    &__button {
+        @include mixn.size(func.px_to_rem(117px), func.px_to_rem(44px));
+        padding: func.px_to_rem(10px) 0;
+        &:hover {
+            @extend %bg-blue;
+        }
+    }
+
+    &__icons {
+        @include mixn.flex(row, center, space-between, nowrap);
+        @include mixn.size(func.px_to_rem(192px), auto);
+        padding: 0 func.px_to_rem(20px);
+
+        @include mixn.respond-to('tablet') {
+            @include mixn.size(func.px_to_rem(135px), auto);
+            padding: 0;
+        }
+
+        @include mixn.respond-to('desktop') {
+            @include mixn.size(func.px_to_rem(372px), auto);
+            padding: 0 func.px_to_rem(5px);
+        }
+    }
+
+    &__heart {
+        @include mixn.flex(row, center, center, nowrap);
+        @include mixn.size(func.px_to_rem(40px), func.px_to_rem(40px));
+
+        @include mixn.respond-to('tablet') {
+            display: none;
+        }
+    }
+
+    &__profile {
+        @include mixn.flex(row, center, center, nowrap);
+        @include mixn.size(func.px_to_rem(40px), func.px_to_rem(40px));
+
+        @include mixn.respond-to('desktop') {
+            gap: func.px_to_rem(8px);
+            @include mixn.size(auto, func.px_to_rem(40px));
+        }
+    }
+
+    &__bag {
+        @include mixn.flex(row, center, center, nowrap);
+        @include mixn.size(func.px_to_rem(40px), func.px_to_rem(40px));
+
+        @include mixn.respond-to('desktop') {
+            gap: func.px_to_rem(10px);
+            @include mixn.size(auto, func.px_to_rem(40px));
+        }
+    }
+
+    &__icon-detail {
+        display: none;
+
+        @include mixn.respond-to('desktop') {
+            display: block;
+        }
+    }
+}
+
+.dropdown-menu {
+    display: none;
+    left: 0;
+    text-align: left;
+    @include mixn.size(func.px_to_rem(300px), auto);
+    background-color: func.color('white');
+
+    &__link {
+        @include mixn.size(auto, func.px_to_rem(64px));
+        display: block;
+        padding: 0 func.px_to_rem(8px);
+        padding: 0 func.px_to_rem(25px);
+        align-content: center;
+
+        &:hover {
+            @extend %bg-blue;
+        }
+    }
+
+    &__title {
+        align-content: center;
+        padding: 0 func.px_to_rem(25px);
+        @include mixn.size(auto, func.px_to_rem(57px));
+        color: func.color('yellow');
+    }
+
+    &--active {
+        display: block;
+        position: absolute;
+        top: 100%;
+
+        @include mixn.respond-to('tablet') {
+            display: none;
+        }
+    }
+}
+
+.dropdown-category {
+    &__list {
+        display: none;
+        left: 0;
+        text-align: left;
+
+        &--active {
+            display: block;
+            position: absolute;
+        }
+    }
+
+    &__link {
+        display: block;
+        background-color: func.color('white');
+        padding: 0 func.px_to_rem(25px);
+        align-content: center;
+        @include mixn.size(func.px_to_rem(181px), func.px_to_rem(64px));
+
+        &:hover {
+            @extend %bg-blue;
+        }
+    }
+}

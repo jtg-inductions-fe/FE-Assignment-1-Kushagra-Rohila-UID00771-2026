@@ -10,7 +10,6 @@
     padding: 0;
 }
 
-body,
 h1,
 h2,
 h3,
@@ -34,7 +33,7 @@ body {
 .page-container {
     width: 100%;
     margin: 0 auto;
-
+    padding: 0;
     @include mixn.respond-to('mobile') {
         max-width: func.breakpoint('mobile');
     }
@@ -67,6 +66,7 @@ input,
 textarea,
 select,
 button {
+    background-color: transparent;
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
