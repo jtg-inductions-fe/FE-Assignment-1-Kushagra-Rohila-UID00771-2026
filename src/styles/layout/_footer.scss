@@ -1,0 +1,57 @@
+@use '../abstracts/functions' as func;
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mixn;
+.footer {
+    @include mixn.size(auto, func.px_to_rem(65px));
+    padding: 1rem 1.5rem;
+    font-size: func.size(2xs);
+    @include mixn.respond-to('tablet') {
+        @include mixn.size(auto, auto);
+        @include mixn.flex(row, normal, normal, nowrap);
+        gap: 6.8rem;
+        padding: 3.2rem 0 4.2rem 1.5rem;
+    }
+    @include mixn.respond-to('desktop') {
+        gap: 7.8rem;
+        padding: 3.2rem 0 4rem 12.9rem;
+    }
+
+    &__content {
+        display: none;
+        color: func.color('gray-darker');
+        @include mixn.respond-to('tablet') {
+            @include mixn.flex(row, normal, normal, nowrap);
+            gap: 5.2rem;
+        }
+        @include mixn.respond-to('desktop') {
+            gap: 12.5rem;
+        }
+    }
+    &__column {
+        @include mixn.flex(column, normal, normal, nowrap);
+        gap: 1rem;
+
+        @include mixn.respond-to('desktop') {
+            border-left: 1px solid;
+            padding: 0 0 0 1.5rem;
+            gap: 1rem;
+        }
+
+        button {
+            @include mixn.flex(row, center, normal, nowrap);
+            gap: 0.4rem;
+        }
+    }
+
+    h1 {
+        font-size: func.size(xs);
+        @include mixn.respond-to('tablet') {
+            font-size: func.size(rg);
+        }
+    }
+    h2 {
+        color: func.color('gray-dark');
+        font-size: inherit;
+        padding: 0 0 0.8rem 0;
+    }
+}
