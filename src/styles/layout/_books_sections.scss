@@ -12,8 +12,8 @@
     }
 
     @include mixn.respond-to('desktop') {
-        margin-top: func.px_to_rem(30px);
-        gap: 1.1rem;
+        margin-top: func.px_to_rem(27px);
+        gap: 1rem;
     }
 
     &__heading {
@@ -46,7 +46,7 @@
 
         @include mixn.respond-to('desktop') {
             padding-left: 10.8rem;
-            gap: 2rem;
+            gap: 1.5rem;
             flex-direction: row;
             @include mixn.size(100%, func.px_to_rem(508px));
         }
@@ -54,6 +54,7 @@
 
     &__article-h3 {
         font-size: func.size('sm');
+        color: func.color('primary');
     }
 
     &__article-h2 {
