@@ -14,6 +14,7 @@ $colors: (
 );
 //Gradient
 $gradient-blue: linear-gradient(
+    90deg,
     map.get($colors, 'primary'),
     map.get($colors, 'secondary')
 );
@@ -34,6 +35,7 @@ $sizes: (
 
 // 3. Text Weights
 $weights: (
+    light: 300,
     regular: 400,
     medium: 500,
     bold: 700,
@@ -45,3 +47,9 @@ $breakpoints: (
     'tablet': 1024px,
     'desktop': 1728px,
 );
+
+:export {
+    mobile: map.get($breakpoints, 'mobile');
+    tablet: map.get($breakpoints, 'tablet');
+    desktop: map.get($breakpoints, 'desktop');
+}

@@ -17,7 +17,6 @@
         @include mixn.respond-to('tablet') {
             display: none;
         }
-
         &:hover {
             @extend %bg-blue;
         }
@@ -39,7 +38,7 @@
     }
 
     &__brand {
-        @include mixn.flex(row, flex-end, flex-start, nowrap);
+        @include mixn.flex(row, flex-end, normal, nowrap);
         @include mixn.size(auto, func.px_to_rem(40px));
 
         @include mixn.respond-to('tablet') {
@@ -74,7 +73,7 @@
 
     &__list {
         @include mixn.size(100%, auto);
-        @include mixn.flex(row, center, flex-start, nowrap);
+        @include mixn.flex(row, center, normal, nowrap);
         gap: func.px_to_rem(20px);
 
         @include mixn.respond-to('tablet') {
@@ -89,6 +88,7 @@
     &__button {
         @include mixn.size(func.px_to_rem(117px), func.px_to_rem(44px));
         padding: func.px_to_rem(10px) 0;
+
         &:hover {
             @extend %bg-blue;
         }
@@ -178,6 +178,7 @@
         display: block;
         position: absolute;
         top: 100%;
+        z-index: 100;
 
         @include mixn.respond-to('tablet') {
             display: none;
@@ -192,6 +193,7 @@
         text-align: left;
 
         &--active {
+            z-index: 10;
             display: block;
             position: absolute;
         }
