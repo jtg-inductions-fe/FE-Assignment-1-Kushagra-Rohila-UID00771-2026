@@ -1,9 +1,67 @@
+import Splide from '@splidejs/splide';
+import '../styles/main.scss';
+
+function attachWheelControl(splideInstance) {
+    let isScrolling = false;
+    const cooldown = 200;
+
+    splideInstance.root.addEventListener(
+        'wheel',
+        (event) => {
+            if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
+                event.preventDefault();
+
+                if (isScrolling) return;
+
+                isScrolling = true;
+
+                if (event.deltaX > 0) {
+                    splideInstance.go('>');
+                } else if (event.deltaX < 0) {
+                    splideInstance.go('<');
+                }
+
+                setTimeout(() => {
+                    isScrolling = false;
+                }, cooldown);
+            }
+        },
+        { passive: false },
+    );
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.getElementById('menuToggle');
     const categoriesMenu = document.getElementById('categoriesMenu');
     const categoriesToggle = document.getElementById('categoriesToggle');
     const categoryList = document.getElementById('categoryList');
     const categoryWrapper = document.getElementById('categoryWrapper');
+
+    const sliderConfig = {
+        type: 'loop',
+        mediaQuery: 'min',
+        perPage: 1,
+        perMove: 1,
+        gap: '1.2rem',
+        arrows: true,
+        pagination: true,
+        padding: '29%',
+        drag: true,
+        flickPower: 900,
+        breakpoints: {
+            1024: {
+                perPage: 3,
+                perMove: 3,
+                padding: '0%',
+                gap: '5rem',
+            },
+            1728: {
+                gap: '0.9rem',
+            },
+        },
+    };
+    const carousel1 = new Splide('#latest-releases--carousel', sliderConfig);
+    const carousel2 = new Splide('#best-sellers--carousel', sliderConfig);
 
     document.addEventListener('click', (e) => {
         if (e.target.closest('#menuToggle')) {
@@ -64,4 +122,10 @@ document.addEventListener('DOMContentLoaded', () => {
             categoriesToggle.classList.remove('bg-blue');
         });
     }
+
+    carousel1.mount();
+    carousel2.mount();
+
+    attachWheelControl(carousel1);
+    attachWheelControl(carousel2);
 });

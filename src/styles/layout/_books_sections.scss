@@ -1,0 +1,79 @@
+@use '../abstracts/functions' as func;
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mixn;
+
+.latest-releases,
+.best-sellers {
+    margin-top: func.px_to_rem(8px);
+
+    @include mixn.respond-to('tablet') {
+        @include mixn.flex(column, center, normal, nowrap);
+        margin-top: func.px_to_rem(28px);
+    }
+
+    @include mixn.respond-to('desktop') {
+        margin-top: func.px_to_rem(27px);
+        gap: 1rem;
+    }
+
+    &__heading {
+        @include mixn.size(100%, auto);
+        background-color: func.color('white');
+        color: func.color('yellow');
+        text-align: center;
+        padding: func.px_to_rem(10px);
+        font-size: func.size('sm');
+
+        @include mixn.respond-to('tablet') {
+            font-size: func.size(lg);
+            padding: func.px_to_rem(18px);
+        }
+
+        @include mixn.respond-to('desktop') {
+            font-size: func.size(3xl);
+            padding: func.px_to_rem(12px);
+        }
+    }
+
+    &__content {
+        padding: 0.1rem 0;
+        background-color: func.color('gray-light');
+
+        @include mixn.respond-to('tablet') {
+            @include mixn.flex(column, center, normal, nowrap);
+            @include mixn.size(100%, func.px_to_rem(760px));
+        }
+
+        @include mixn.respond-to('desktop') {
+            padding-left: 10.8rem;
+            gap: 1.5rem;
+            flex-direction: row;
+            @include mixn.size(100%, func.px_to_rem(508px));
+        }
+    }
+
+    &__article-h3 {
+        font-size: func.size('sm');
+        color: func.color('primary');
+    }
+
+    &__article-h2 {
+        color: func.color('yellow');
+        font-size: func.size(xs);
+        letter-spacing: 0%;
+
+        @include mixn.respond-to('desktop') {
+            font-size: func.size(3xl);
+        }
+    }
+
+    p {
+        font-size: func.size(2xs);
+        padding-right: 1.2rem;
+
+        @include mixn.respond-to('tablet') {
+            font-size: func.size(2xs);
+            padding-right: 5.5rem;
+        }
+    }
+}
