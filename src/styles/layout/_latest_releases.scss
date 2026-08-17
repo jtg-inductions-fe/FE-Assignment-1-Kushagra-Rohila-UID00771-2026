@@ -62,14 +62,6 @@
         }
     }
 
-    &__article-img {
-        @include mixn.size(func.px_to_rem(162px), func.px_to_rem(168px));
-
-        @include mixn.respond-to('tablet') {
-            @include mixn.size(func.px_to_rem(146px), func.px_to_rem(152px));
-        }
-    }
-
     &__icons {
         @include mixn.flex(row, normal, normal, nowrap);
         @include mixn.size(100%, auto);
@@ -87,11 +79,27 @@
         }
     }
 
+    &__article-img {
+        @include mixn.size(100%, func.px_to_rem(168px));
+
+        @include mixn.respond-to('tablet') {
+            @include mixn.size(func.px_to_rem(146px), func.px_to_rem(150px));
+        }
+    }
+
     &__button {
         background-color: func.color('yellow');
         @include mixn.size(100%, func.px_to_rem(48px));
         color: func.color('white');
 
+        @include mixn.respond-to('tablet') {
+            @include mixn.size(func.px_to_rem(146px), func.px_to_rem(48px));
+        }
+    }
+    &__button {
+        background-color: func.color('yellow');
+        @include mixn.size(func.px_to_rem(161px), func.px_to_rem(48px));
+        color: func.color('white');
         @include mixn.respond-to('tablet') {
             @include mixn.size(func.px_to_rem(146px), func.px_to_rem(48px));
         }

@@ -1,0 +1,56 @@
+@use '../abstracts/functions' as func;
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mixn;
+
+.recently-visited {
+    @include mixn.flex(column, center, center, nowrap);
+    padding: 1.5rem 0.4rem;
+    background-image: vars.$gradient-blue;
+    gap: 2rem;
+    @include mixn.respond-to('tablet') {
+        padding: 1.8rem;
+        gap: 2.7rem;
+    }
+    @include mixn.respond-to('desktop') {
+        padding: 3.8rem 0 4.4rem 0;
+        gap: 2.7rem;
+    }
+    h1 {
+        text-align: center;
+        font-size: func.size(xs);
+        color: func.color('white');
+        @include mixn.respond-to('tablet') {
+            font-size: func.size(rg);
+        }
+        @include mixn.respond-to('desktop') {
+            font-size: func.size(3xl);
+        }
+    }
+
+    &__topics {
+        @include mixn.flex(row, normal, center, wrap);
+        gap: 0.8rem 1rem;
+        @include mixn.respond-to('tablet') {
+            gap: 1.2rem 2rem;
+            @include mixn.size(func.px_to_rem(732px), auto);
+        }
+        @include mixn.respond-to('tablet') {
+            gap: 1.2rem 1.5rem;
+            @include mixn.size(func.px_to_rem(850px), auto);
+        }
+    }
+
+    &__topic-title {
+        color: func.color('white');
+        background-color: func.color('yellow');
+        padding: 1.05rem 1.2rem;
+        font-size: func.size(2xs);
+        @include mixn.respond-to('tablet') {
+            padding: 2.1rem;
+            font-size: func.size(rg);
+        }
+        @include mixn.respond-to('tablet') {
+            padding: 1.55rem 2rem;
+        }
+    }
+}
