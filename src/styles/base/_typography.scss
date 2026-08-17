@@ -1,4 +1,6 @@
 @use 'sass:map';
+@use '../abstracts/functions' as func;
+@use '../abstracts/mixins' as mixn;
 
 $font-weights: (
     'thin': (
@@ -68,4 +70,37 @@ $font-weights: (
 
 * {
     font-family: 'Poppins', 'Josefin Sans', sans-serif;
+}
+
+h1 {
+    font-size: func.size(sm);
+    @include mixn.respond-to('tablet') {
+        font-size: func.size(4xl);
+    }
+}
+h2 {
+    font-size: func.size(sm);
+    @include mixn.respond-to('tablet') {
+        font-size: func.size(lg);
+    }
+    @include mixn.respond-to('desktop') {
+        font-size: func.size(3xl);
+    }
+}
+
+h3 {
+    font-size: func.size(xs);
+    @include mixn.respond-to('desktop') {
+        font-size: func.size(3xl);
+    }
+}
+
+h4 {
+    font-size: size(sm);
+    @include mixn.respond-to('tablet') {
+    }
+}
+
+h5 {
+    font-size: func.size(2xs);
 }

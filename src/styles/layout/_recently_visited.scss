@@ -15,16 +15,9 @@
         padding: 3.8rem 0 4.4rem 0;
         gap: 2.7rem;
     }
-    h1 {
+    &__heading {
         text-align: center;
-        font-size: func.size(xs);
         color: func.color('white');
-        @include mixn.respond-to('tablet') {
-            font-size: func.size(rg);
-        }
-        @include mixn.respond-to('desktop') {
-            font-size: func.size(3xl);
-        }
     }
 
     &__topics {

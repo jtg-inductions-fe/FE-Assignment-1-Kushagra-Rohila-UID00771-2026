@@ -15,8 +15,8 @@
         max-width: func.px_to_rem(380px);
 
         @include mixn.respond-to('tablet') {
-            max-width: none;
             @include mixn.size(func.px_to_rem(580px), func.px_to_rem(266px));
+            max-width: none;
             margin-top: 3.48rem;
             padding: 0.8rem;
             gap: 0;
@@ -32,7 +32,6 @@
     &__article-text {
         @include mixn.flex(column, normal, normal, nowrap);
         flex: 1;
-
         gap: 0.38rem;
 
         @include mixn.respond-to('tablet') {

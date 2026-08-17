@@ -16,10 +16,13 @@
     }
 
     &__heading {
-        font-size: func.size(sm);
+        overflow: hidden;
         text-align: center;
+        max-height: 20px;
+
         @include mixn.respond-to('tablet') {
-            font-size: func.size(4xl);
+            max-height: none;
+            @include mixn.size(auto, func.px_to_rem(55px));
         }
     }
 

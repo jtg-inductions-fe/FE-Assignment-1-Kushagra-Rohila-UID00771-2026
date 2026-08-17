@@ -21,15 +21,12 @@
         color: func.color('yellow');
         text-align: center;
         padding: func.px_to_rem(10px);
-        font-size: func.size('sm');
 
         @include mixn.respond-to('tablet') {
-            font-size: func.size(lg);
             padding: func.px_to_rem(18px);
         }
 
         @include mixn.respond-to('desktop') {
-            font-size: func.size(3xl);
             padding: func.px_to_rem(12px);
         }
     }
@@ -52,18 +49,12 @@
     }
 
     &__article-subheading {
-        font-size: func.size('sm');
         color: func.color('primary');
     }
 
     &__article-heading {
         color: func.color('yellow');
-        font-size: func.size(xs);
         letter-spacing: 0%;
-
-        @include mixn.respond-to('desktop') {
-            font-size: func.size(3xl);
-        }
     }
 
     &__article-detail {

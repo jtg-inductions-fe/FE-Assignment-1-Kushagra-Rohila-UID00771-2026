@@ -33,13 +33,12 @@
         }
     }
 
-    h2 {
-        font-size: func.size(sm);
-        @include mixn.respond-to('tablet') {
-            font-size: func.size(rg);
+    &__heading {
+        @include mixn.respond-to('desktop') {
+            font-size: func.size(lg);
         }
     }
-    p {
+    &__text {
         overflow: hidden;
         @include mixn.respond-to('tablet') {
             @include mixn.size(func.px_to_rem(350px), auto);

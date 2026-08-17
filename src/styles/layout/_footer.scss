@@ -16,6 +16,16 @@
         padding: 3.2rem 0 4rem 12.9rem;
     }
 
+    &__heading {
+        @include mixn.respond-to('tablet') {
+            font-size: func.size(rg);
+        }
+    }
+    &__subheading {
+        color: func.color('gray-dark');
+        padding: 0 0 0.8rem 0;
+    }
+
     &__content {
         display: none;
         color: func.color('gray-darker');
@@ -29,32 +39,24 @@
     }
     &__column {
         @include mixn.flex(column, normal, normal, nowrap);
-        gap: 1rem;
+        gap: 0.4rem;
 
         @include mixn.respond-to('desktop') {
             border-left: 1px solid;
             padding: 0 0 0 1.5rem;
-            gap: 1rem;
-        }
-
-        a {
-            @include mixn.flex(row, center, normal, nowrap);
-            gap: 0.4rem;
-            &:hover {
-                background-color: func.color('gray-light');
-            }
         }
     }
 
-    h2 {
-        font-size: func.size(xs);
-        @include mixn.respond-to('tablet') {
-            font-size: func.size(rg);
+    &__link {
+        @include mixn.flex(row, center, normal, nowrap);
+        gap: 0.4rem;
+        padding: 0.4rem;
+        &:hover {
+            background-color: func.color('gray-light');
+            @include mixn.transition(
+                transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                background-color 0.25s ease
+            );
         }
-    }
-    h3 {
-        color: func.color('gray-dark');
-        font-size: inherit;
-        padding: 0 0 0.8rem 0;
     }
 }

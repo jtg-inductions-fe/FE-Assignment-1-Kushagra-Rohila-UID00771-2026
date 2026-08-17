@@ -110,6 +110,7 @@
     &__heart {
         @include mixn.flex(row, center, center, nowrap);
         @include mixn.size(func.px_to_rem(40px), func.px_to_rem(40px));
+        padding: 0.5rem;
 
         @include mixn.respond-to('tablet') {
             display: none;
@@ -119,6 +120,7 @@
     &__profile {
         @include mixn.flex(row, center, center, nowrap);
         @include mixn.size(func.px_to_rem(40px), func.px_to_rem(40px));
+        padding: 0.5rem;
 
         @include mixn.respond-to('desktop') {
             gap: func.px_to_rem(8px);
@@ -128,6 +130,8 @@
 
     &__bag {
         @include mixn.flex(row, center, center, nowrap);
+        padding: 0.5rem;
+
         @include mixn.size(func.px_to_rem(40px), func.px_to_rem(40px));
 
         @include mixn.respond-to('desktop') {
