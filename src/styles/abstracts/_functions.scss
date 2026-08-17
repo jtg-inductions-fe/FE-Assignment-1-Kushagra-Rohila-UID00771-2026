@@ -2,9 +2,13 @@
 @use 'sass:math';
 @use 'sass:map';
 
-@function px-to-rem($pixels) {
+@function px_to_rem($pixels) {
     $unitless: if(math.is-unitless($pixels), $pixels, math.div($pixels, 1px));
     @return math.div($unitless, 16) * 1rem;
+}
+
+@function size($key) {
+    @return px_to_rem(map.get(vars.$sizes, $key));
 }
 
 @function color($key) {
