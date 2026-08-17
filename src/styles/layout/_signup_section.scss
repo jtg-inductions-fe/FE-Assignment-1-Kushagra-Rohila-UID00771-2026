@@ -1,0 +1,66 @@
+@use '../abstracts/functions' as func;
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mixn;
+
+.sign-up {
+    padding: 1.7rem;
+    @include mixn.flex(column, center, center, nowrap);
+    color: func.color('primary');
+    gap: 1.5rem;
+    @include mixn.respond-to('tablet') {
+        flex-direction: row;
+        padding: 2rem 2rem 3.5rem 2rem;
+        gap: 1.4rem;
+    }
+    @include mixn.respond-to('desktop') {
+        flex-direction: row;
+        padding: 4.2rem 0 1.8rem 0;
+        gap: 0.8rem;
+        align-items: flex-start;
+    }
+
+    &__content {
+        @include mixn.flex(column, normal, normal, nowrap);
+        gap: 0.8rem;
+        @include mixn.respond-to('tablet') {
+            @include mixn.size(func.px_to_rem(376px), auto);
+        }
+        @include mixn.respond-to('desktop') {
+            @include mixn.size(func.px_to_rem(420px), auto);
+            gap: 0.38rem;
+        }
+    }
+
+    h2 {
+        font-size: func.size(sm);
+        @include mixn.respond-to('tablet') {
+            font-size: func.size(rg);
+        }
+    }
+    p {
+        @include mixn.respond-to('tablet') {
+            @include mixn.size(func.px_to_rem(350px), auto);
+        }
+        @include mixn.respond-to('desktop') {
+            @include mixn.size(func.px_to_rem(380px), auto);
+        }
+    }
+
+    &__button {
+        @include mixn.flex(row, center, baseline, nowrap);
+        @include mixn.size(func.px_to_rem(380px), func.px_to_rem(44px));
+        padding: 0 1.8rem;
+        color: func.color('primary');
+        border: 1px solid;
+        border-radius: func.px_to_rem(24px);
+        gap: 0.7rem;
+        @include mixn.respond-to('tablet') {
+            @include mixn.size(func.px_to_rem(327px), func.px_to_rem(44px));
+            padding: 0 1.5rem;
+        }
+        @include mixn.respond-to('desktop') {
+            @include mixn.size(func.px_to_rem(349px), func.px_to_rem(44px));
+            margin-top: 1.5rem;
+        }
+    }
+}
