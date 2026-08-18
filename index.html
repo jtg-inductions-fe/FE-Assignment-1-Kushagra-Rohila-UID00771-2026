@@ -16,10 +16,18 @@
             </noscript>
 
             <header class="header">
-                <button class="header__menu" id="menuToggle">
+                <button
+                    class="header__menu"
+                    id="menuToggle"
+                    aria-label="Open menu"
+                >
                     <span class="menu-icon text--lg"></span>
                 </button>
-                <nav class="dropdown-menu" id="categoriesMenu">
+                <nav
+                    class="dropdown-menu"
+                    id="categoriesMenu"
+                    aria-label="Categories menu"
+                >
                     <ul class="dropdown-menu__list">
                         <li class="dropdown-menu__title text--sm text--bold">
                             Categories
@@ -61,7 +69,7 @@
                             <span class="text--bold text--lg">Alura</span>Books
                         </div>
                     </a>
-                    <nav class="header__navbar">
+                    <nav class="header__navbar" aria-label="Main navigation">
                         <ul class="header__list">
                             <div id="categoryWrapper">
                                 <li>
@@ -75,6 +83,7 @@
                                 <ul
                                     class="dropdown-category__list"
                                     id="categoryList"
+                                    aria-label="Categories"
                                 >
                                     <li class="dropdown-category__item">
                                         <a
@@ -126,16 +135,19 @@
                         </ul>
                     </nav>
                     <div class="header__icons text--3xl">
-                        <button class="header__heart">
+                        <button class="header__heart" aria-label="Favorites">
                             <span class="heart-icon"></span>
                         </button>
-                        <button class="header__bag">
+                        <button class="header__bag" aria-label="Shopping Bag">
                             <span class="bag-icon"></span>
                             <div class="header__icon-detail text--rg">
                                 My Bag
                             </div>
                         </button>
-                        <button class="header__profile">
+                        <button
+                            class="header__profile"
+                            aria-label="User Profile"
+                        >
                             <span class="profile-icon"></span>
                             <div class="header__icon-detail text--rg">
                                 My Profile
@@ -160,12 +172,13 @@
                             class="search-section__input icon"
                             id="search"
                             placeholder=" "
+                            aria-label="Search for books"
                         />
                         <label for="search" class="search-section__label">
                             <span class="search-icon text--sm"></span>
                             <span class="search-section__search-text"
-                                >What will your next read be?</span
-                            >
+                                >What will your next read be?
+                            </span>
                         </label>
                     </form>
                 </section>
@@ -269,12 +282,12 @@
                                     Google platform.
                                 </p>
                                 <div class="latest-releases__icons">
-                                    <button>
+                                    <button aria-label="Add to favorites">
                                         <span
                                             class="heart-icon text--lg"
                                         ></span>
                                     </button>
-                                    <button>
+                                    <button aria-label="Add to bag">
                                         <span class="bag-icon text--lg"></span>
                                     </button>
                                 </div>
@@ -401,12 +414,12 @@
                                     specializes in front-end development.
                                 </p>
                                 <div class="best-sellers__icons">
-                                    <button>
+                                    <button aria-label="Add to favorites">
                                         <span
                                             class="heart-icon text--lg"
                                         ></span>
                                     </button>
-                                    <button>
+                                    <button aria-label="Add to bag">
                                         <span class="bag-icon text--lg"></span>
                                     </button>
                                 </div>
@@ -428,7 +441,11 @@
                     <h2 class="text--light recently-visited__heading">
                         RECENTLY VISITED TOPICS
                     </h2>
-                    <div class="recently-visited__topics">
+                    <div
+                        class="recently-visited__topics"
+                        role="group"
+                        aria-label="Recently visited topics"
+                    >
                         <button
                             class="recently-visited__topic-title text--bold"
                         >
@@ -482,7 +499,7 @@
                         </p>
                     </div>
                     <button class="sign-up__button">
-                        <span class="mail-icon"></span>
+                        <span class="mail-icon" aria-hidden="true"></span>
                         <span>Sign up with your email</span>
                     </button>
                 </section>

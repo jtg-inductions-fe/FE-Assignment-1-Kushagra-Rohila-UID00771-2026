@@ -1,5 +1,6 @@
 @use '../abstracts/functions' as func;
 @use '../abstracts/mixins' as mixn;
+@use '../abstracts/placeholders';
 
 .latest-releases,
 .best-sellers {
@@ -50,17 +51,19 @@
 
     &__article-subheading {
         color: func.color('primary');
+        @extend %overflow-limit-to-2-lines;
     }
 
     &__article-heading {
         color: func.color('yellow');
         letter-spacing: 0%;
+        @extend %overflow-limit-to-2-lines;
     }
 
     &__article-detail {
         font-size: func.size(2xs);
         padding-right: 1.2rem;
-        overflow: hidden;
+        // @extend %overflow-limit-to-2-lines;
 
         @include mixn.respond-to('tablet') {
             font-size: func.size(2xs);

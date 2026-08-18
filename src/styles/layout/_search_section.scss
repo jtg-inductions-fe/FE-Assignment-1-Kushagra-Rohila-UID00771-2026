@@ -9,6 +9,7 @@
     color: func.color('white');
     background-image: vars.$gradient-blue;
     gap: func.px_to_rem(7px);
+    padding: 0 2rem;
 
     @include mixn.respond-to('tablet') {
         @include mixn.size(auto, func.px_to_rem(330px));
@@ -16,12 +17,13 @@
     }
 
     &__heading {
+        max-width: 100%;
         overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
         text-align: center;
-        max-height: 20px;
 
         @include mixn.respond-to('tablet') {
-            max-height: none;
             @include mixn.size(auto, func.px_to_rem(55px));
         }
     }
@@ -30,6 +32,9 @@
         @include mixn.size(func.px_to_rem(316px), func.px_to_rem(48px));
         text-align: center;
         overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
         @include mixn.respond-to('tablet') {
             @include mixn.size(100%, func.px_to_rem(48px));
         }
@@ -70,6 +75,7 @@
     }
 
     &__label {
+        padding: 0 1rem;
         cursor: text;
         color: func.color('white');
         @extend %full-overlay;
@@ -80,5 +86,13 @@
         @include mixn.respond-to('tablet') {
             font-size: func.size(xs);
         }
+    }
+
+    &__search-text {
+        max-height: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 }
