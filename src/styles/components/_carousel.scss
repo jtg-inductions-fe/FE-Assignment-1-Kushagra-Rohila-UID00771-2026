@@ -51,14 +51,15 @@
     &__arrow {
         @include mixn.size(func.px_to_rem(48px), func.px_to_rem(48px));
         @include mixn.transition(background-color 0.2s ease, opacity 0.2s ease);
+        transform: none;
         position: absolute;
         background-image: vars.$gradient-blue;
         border-radius: 50%;
-        top: 15.11rem;
+        top: 14.5rem;
         opacity: 1;
         z-index: 10;
         @include mixn.respond-to('desktop') {
-            top: 12rem;
+            top: 11rem;
         }
 
         svg {
