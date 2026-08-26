@@ -35,15 +35,14 @@
     }
 
     &__heading {
-        @extend %overflow-limit-to-2-lines;
-        -webkit-line-clamp: 1;
+        @include mixn.overflow(2);
         @include mixn.respond-to('desktop') {
             -webkit-line-clamp: 2;
             font-size: func.size(lg);
         }
     }
     &__text {
-        @extend %overflow-limit-to-2-lines;
+        @include mixn.overflow(2);
         @include mixn.respond-to('tablet') {
             @include mixn.size(func.px_to_rem(350px), auto);
         }
@@ -53,9 +52,7 @@
     }
 
     &__button {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+        @include mixn.overflow(1);
         @include mixn.flex(row, center, normal, nowrap);
         max-width: func.px_to_rem(380px);
         @include mixn.size(100%, func.px_to_rem(44px));

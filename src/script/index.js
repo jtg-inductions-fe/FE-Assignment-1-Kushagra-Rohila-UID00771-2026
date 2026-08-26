@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target.closest('#menuToggle')) {
             categoriesMenu.classList.toggle('dropdown-menu--active');
             menuToggle.classList.toggle('bg-blue');
-            return; // Exit early
+            return;
         }
 
         if (e.target.closest('#categoriesToggle')) {

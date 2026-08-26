@@ -51,21 +51,22 @@
 
     &__article-subheading {
         color: func.color('primary');
-        @extend %overflow-limit-to-2-lines;
+        @include mixn.overflow(2);
     }
 
     &__article-heading {
         color: func.color('yellow');
         letter-spacing: 0%;
-        @extend %overflow-limit-to-2-lines;
+        @include mixn.overflow(2);
     }
 
     &__article-detail {
         font-size: func.size(2xs);
         padding-right: 1.2rem;
-        // @extend %overflow-limit-to-2-lines;
+        @include mixn.overflow(4);
 
         @include mixn.respond-to('tablet') {
+            @include mixn.overflow(2);
             font-size: func.size(2xs);
             padding-right: 5.5rem;
         }

@@ -64,8 +64,6 @@
     }
 
     &__link-title {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+        @include mixn.overflow(1);
     }
 }

@@ -1,6 +1,5 @@
 @use 'sass:map';
 
-// 1. Color Palette
 $colors: (
     'primary': #002f52,
     'secondary': #326589,
@@ -12,14 +11,12 @@ $colors: (
     'gray-darker': #474646,
     'yellow': #eb9b00,
 );
-//Gradient
 $gradient-blue: linear-gradient(
     90deg,
     map.get($colors, 'primary'),
     map.get($colors, 'secondary')
 );
 
-// 2. Test sizes
 $sizes: (
     2xs: 14,
     xs: 16,
@@ -33,7 +30,6 @@ $sizes: (
     4xl: 36,
 );
 
-// 3. Text Weights
 $weights: (
     light: 300,
     regular: 400,
@@ -41,7 +37,6 @@ $weights: (
     bold: 700,
 );
 
-// 4. Responsive Breakpoints
 $breakpoints: (
     'mobile': 428px,
     'tablet': 1024px,

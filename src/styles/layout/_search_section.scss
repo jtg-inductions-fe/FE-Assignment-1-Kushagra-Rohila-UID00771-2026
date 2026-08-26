@@ -18,9 +18,8 @@
 
     &__heading {
         max-width: 100%;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+        @include mixn.overflow(1);
+
         text-align: center;
 
         @include mixn.respond-to('tablet') {
@@ -30,10 +29,8 @@
 
     &__details {
         @include mixn.size(func.px_to_rem(316px), func.px_to_rem(48px));
+        @include mixn.overflow(1);
         text-align: center;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
 
         @include mixn.respond-to('tablet') {
             @include mixn.size(100%, func.px_to_rem(48px));
@@ -91,8 +88,6 @@
     &__search-text {
         max-height: 100%;
         max-width: 100%;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+        @include mixn.overflow(1);
     }
 }
