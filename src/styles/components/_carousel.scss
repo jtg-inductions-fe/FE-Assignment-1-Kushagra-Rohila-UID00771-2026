@@ -50,7 +50,7 @@
 
     &__arrow {
         @include mixn.size(func.px_to_rem(48px), func.px_to_rem(48px));
-        @include mixn.transition(background-color 0.2s ease, opacity 0.2s ease);
+        @include mixn.transition(background-color 0.2s ease);
         transform: none;
         position: absolute;
         background-image: vars.$gradient-blue;
@@ -65,7 +65,6 @@
         svg {
             fill: func.color('white');
             @include mixn.size(func.px_to_rem(18px), func.px_to_rem(18px));
-            @include mixn.transition(fill 0.2s ease);
         }
 
         &:hover {
