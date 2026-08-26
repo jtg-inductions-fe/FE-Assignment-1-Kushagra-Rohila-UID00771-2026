@@ -1,0 +1,93 @@
+@use '../abstracts/functions' as func;
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mixn;
+@use '../abstracts/placeholders';
+
+.search-section {
+    @include mixn.size(auto, func.px_to_rem(215px));
+    @include mixn.flex(column, center, center, nowrap);
+    color: func.color('white');
+    background-image: vars.$gradient-blue;
+    gap: func.px_to_rem(7px);
+    padding: 0 2rem;
+
+    @include mixn.respond-to('tablet') {
+        @include mixn.size(auto, func.px_to_rem(330px));
+        gap: func.px_to_rem(2px);
+    }
+
+    &__heading {
+        max-width: 100%;
+        @include mixn.overflow(1);
+
+        text-align: center;
+
+        @include mixn.respond-to('tablet') {
+            @include mixn.size(auto, func.px_to_rem(55px));
+        }
+    }
+
+    &__details {
+        @include mixn.size(func.px_to_rem(316px), func.px_to_rem(48px));
+        @include mixn.overflow(1);
+        text-align: center;
+
+        @include mixn.respond-to('tablet') {
+            @include mixn.size(100%, func.px_to_rem(48px));
+        }
+    }
+
+    &__form {
+        @include mixn.size(auto, func.px_to_rem(44px));
+        position: relative;
+        margin: func.px_to_rem(18px) func.px_to_rem(20px) 0 func.px_to_rem(20px);
+        text-align: center;
+        border-radius: func.px_to_rem(24px);
+        border: func.px_to_rem(1px) solid func.color('white');
+        padding: func.px_to_rem(10px) func.px_to_rem(64px);
+        @include mixn.respond-to('tablet') {
+            margin-top: 0.2rem;
+            padding: func.px_to_rem(10px) func.px_to_rem(80px);
+            @include mixn.size(auto, func.px_to_rem(56px));
+        }
+        @include mixn.respond-to('desktop') {
+            @include mixn.size(func.px_to_rem(586px), func.px_to_rem(56px));
+        }
+    }
+
+    &__input {
+        outline: none;
+        @include mixn.size(100%, 100%);
+        color: func.color('white');
+        text-align: center;
+        &:focus + .search-section__label,
+        &:not(:placeholder-shown) + .search-section__label {
+            justify-content: normal;
+            padding-left: 1rem;
+            .search-section__search-text {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+    }
+
+    &__label {
+        padding: 0 1rem;
+        cursor: text;
+        color: func.color('white');
+        @extend %full-overlay;
+        @include mixn.flex(row, center, center, nowrap);
+        gap: 12px;
+        font-size: func.size(2xs);
+
+        @include mixn.respond-to('tablet') {
+            font-size: func.size(xs);
+        }
+    }
+
+    &__search-text {
+        max-height: 100%;
+        max-width: 100%;
+        @include mixn.overflow(1);
+    }
+}

@@ -1,0 +1,74 @@
+@use '../abstracts/functions' as func;
+@use '../abstracts/mixins' as mixn;
+@use 'sass:map';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    @include mixn.flex();
+    background-color: func.color('white');
+    color: func.color('black');
+    margin: 0;
+}
+
+.page-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+
+    @include mixn.respond-to('desktop') {
+        max-width: func.breakpoint('desktop');
+    }
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+textarea,
+select,
+button {
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    border: none;
+}
+
+input:focus:not(:focus-visible),
+textarea:focus:not(:focus-visible),
+select:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+    outline: none;
+}

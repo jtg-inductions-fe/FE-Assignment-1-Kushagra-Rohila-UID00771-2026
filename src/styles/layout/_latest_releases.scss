@@ -1,0 +1,98 @@
+@use '../abstracts/functions' as func;
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mixn;
+
+.latest-releases {
+    &__article {
+        @include mixn.flex(row, center, space-between, nowrap);
+        box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.2);
+        margin: 1.7rem 1.55rem;
+        background-color: func.color('white');
+        border-radius: func.px_to_rem(10px);
+        gap: func.px_to_rem(10px);
+        padding: 0.9rem 0.8rem;
+        max-width: func.px_to_rem(380px);
+        box-sizing: border-box;
+
+        @include mixn.respond-to('tablet') {
+            max-width: none;
+            @include mixn.size(func.px_to_rem(580px), func.px_to_rem(266px));
+            margin-top: 3.8rem;
+        }
+
+        @include mixn.respond-to('desktop') {
+            @include mixn.size(func.px_to_rem(588px), func.px_to_rem(278px));
+            height: func.px_to_rem(278px);
+            margin-top: 1rem;
+            padding: 0.4rem 0 0 1.2rem;
+        }
+    }
+
+    &__article-text {
+        @include mixn.flex(column, normal, normal, nowrap);
+        flex: 1;
+        gap: func.px_to_rem(7px);
+        padding: 0 0.5rem;
+
+        @include mixn.respond-to('tablet') {
+            @include mixn.size(100%, func.px_to_rem(254px));
+            padding: 1rem 0.1rem 0.5rem 0.2rem;
+        }
+
+        @include mixn.respond-to('desktop') {
+            padding: 0;
+            gap: 0;
+        }
+    }
+
+    &__article-content {
+        @include mixn.flex(column, normal, normal, nowrap);
+        margin: func.px_to_rem(5px);
+        gap: 2.1rem;
+
+        @include mixn.respond-to('tablet') {
+            align-items: end;
+            gap: 1.5rem;
+        }
+
+        @include mixn.respond-to('desktop') {
+            justify-content: space-between;
+            margin: func.px_to_rem(4px) func.px_to_rem(20px) func.px_to_rem(2px)
+                func.px_to_rem(10px);
+            gap: 2.5rem;
+        }
+    }
+
+    &__icons {
+        @include mixn.flex(row, normal, normal, nowrap);
+        @include mixn.size(100%, auto);
+        gap: func.px_to_rem(27px);
+        padding: func.px_to_rem(10px);
+
+        @include mixn.respond-to('tablet') {
+            margin-top: 3.7rem;
+            padding: 0;
+        }
+
+        @include mixn.respond-to('desktop') {
+            margin-top: 2rem;
+            padding: 0;
+        }
+    }
+
+    &__article-img {
+        @include mixn.size(100%, func.px_to_rem(168px));
+
+        @include mixn.respond-to('tablet') {
+            @include mixn.size(func.px_to_rem(146px), func.px_to_rem(150px));
+        }
+    }
+    &__button {
+        background-color: func.color('yellow');
+        @include mixn.size(func.px_to_rem(161px), func.px_to_rem(48px));
+        color: func.color('white');
+        @include mixn.respond-to('tablet') {
+            @include mixn.size(func.px_to_rem(146px), func.px_to_rem(48px));
+        }
+    }
+}

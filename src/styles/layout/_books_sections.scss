@@ -1,0 +1,74 @@
+@use '../abstracts/functions' as func;
+@use '../abstracts/mixins' as mixn;
+@use '../abstracts/placeholders';
+
+.latest-releases,
+.best-sellers {
+    margin-top: func.px_to_rem(8px);
+
+    @include mixn.respond-to('tablet') {
+        @include mixn.flex(column, center, normal, nowrap);
+        margin-top: func.px_to_rem(28px);
+    }
+
+    @include mixn.respond-to('desktop') {
+        margin-top: func.px_to_rem(27px);
+        gap: 1rem;
+    }
+
+    &__heading {
+        @include mixn.size(100%, auto);
+        background-color: func.color('white');
+        color: func.color('yellow');
+        text-align: center;
+        padding: func.px_to_rem(10px);
+
+        @include mixn.respond-to('tablet') {
+            padding: func.px_to_rem(18px);
+        }
+
+        @include mixn.respond-to('desktop') {
+            padding: func.px_to_rem(12px);
+        }
+    }
+
+    &__content {
+        @include mixn.flex(column, center, normal, nowrap);
+        padding: 0.1rem 0;
+        background-color: func.color('gray-light');
+
+        @include mixn.respond-to('tablet') {
+            @include mixn.size(100%, func.px_to_rem(760px));
+        }
+
+        @include mixn.respond-to('desktop') {
+            padding-left: 10.8rem;
+            gap: 1.5rem;
+            flex-direction: row;
+            @include mixn.size(100%, func.px_to_rem(508px));
+        }
+    }
+
+    &__article-subheading {
+        color: func.color('primary');
+        @include mixn.overflow(2);
+    }
+
+    &__article-heading {
+        color: func.color('yellow');
+        letter-spacing: 0%;
+        @include mixn.overflow(2);
+    }
+
+    &__article-detail {
+        font-size: func.size(2xs);
+        padding-right: 1.2rem;
+        @include mixn.overflow(4);
+
+        @include mixn.respond-to('tablet') {
+            @include mixn.overflow(2);
+            font-size: func.size(2xs);
+            padding-right: 5.5rem;
+        }
+    }
+}

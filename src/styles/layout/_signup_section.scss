@@ -1,0 +1,74 @@
+@use '../abstracts/functions' as func;
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mixn;
+@use '../abstracts/placeholders';
+
+.sign-up {
+    padding: 1.7rem;
+    @include mixn.flex(column, center, center, nowrap);
+    color: func.color('primary');
+    gap: 1.5rem;
+    @include mixn.respond-to('tablet') {
+        flex-direction: row;
+        padding: 2rem 2rem 3.5rem 2rem;
+        gap: 1.4rem;
+    }
+    @include mixn.respond-to('desktop') {
+        flex-direction: row;
+        padding: 4.2rem 0 1.8rem 0;
+        gap: 0.8rem;
+        align-items: flex-start;
+    }
+
+    &__content {
+        @include mixn.flex(column, normal, normal, nowrap);
+        @include mixn.size(auto, func.px_to_rem(90px));
+
+        gap: 0.8rem;
+        @include mixn.respond-to('tablet') {
+            @include mixn.size(func.px_to_rem(450px), 100%);
+        }
+        @include mixn.respond-to('desktop') {
+            @include mixn.size(func.px_to_rem(450px), 100%);
+            gap: 0.38rem;
+        }
+    }
+
+    &__heading {
+        @include mixn.overflow(2);
+        @include mixn.respond-to('desktop') {
+            -webkit-line-clamp: 2;
+            font-size: func.size(lg);
+        }
+    }
+    &__text {
+        @include mixn.overflow(2);
+        @include mixn.respond-to('tablet') {
+            @include mixn.size(func.px_to_rem(350px), auto);
+        }
+        @include mixn.respond-to('desktop') {
+            @include mixn.size(func.px_to_rem(380px), auto);
+        }
+    }
+
+    &__button {
+        @include mixn.overflow(1);
+        @include mixn.flex(row, center, normal, nowrap);
+        max-width: func.px_to_rem(380px);
+        @include mixn.size(100%, func.px_to_rem(44px));
+        padding: 0 1.8rem;
+        color: func.color('primary');
+        border: 1px solid;
+        border-radius: func.px_to_rem(24px);
+        gap: 0.7rem;
+        @include mixn.respond-to('tablet') {
+            max-width: none;
+            @include mixn.size(func.px_to_rem(327px), func.px_to_rem(44px));
+            padding: 0 1.5rem;
+        }
+        @include mixn.respond-to('desktop') {
+            @include mixn.size(func.px_to_rem(349px), func.px_to_rem(44px));
+            margin-top: 1.5rem;
+        }
+    }
+}

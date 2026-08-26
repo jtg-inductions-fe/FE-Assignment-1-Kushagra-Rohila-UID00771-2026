@@ -1,0 +1,44 @@
+@use 'sass:map';
+
+$colors: (
+    'primary': #002f52,
+    'secondary': #326589,
+    'white': #ffffff,
+    'black': #000000,
+    'gray-light': #ebecee,
+    'gray-medium': #c4c4c4,
+    'gray-dark': #858585,
+    'gray-darker': #474646,
+    'yellow': #eb9b00,
+);
+$gradient-blue: linear-gradient(
+    90deg,
+    map.get($colors, 'primary'),
+    map.get($colors, 'secondary')
+);
+
+$sizes: (
+    2xs: 14,
+    xs: 16,
+    sm: 18,
+    rg: 20,
+    md: 24,
+    lg: 26,
+    xl: 28,
+    2xl: 30,
+    3xl: 32,
+    4xl: 36,
+);
+
+$weights: (
+    light: 300,
+    regular: 400,
+    medium: 500,
+    bold: 700,
+);
+
+$breakpoints: (
+    'mobile': 428px,
+    'tablet': 1024px,
+    'desktop': 1728px,
+);

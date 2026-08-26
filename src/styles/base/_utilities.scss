@@ -1,0 +1,5 @@
+@use '../abstracts/placeholders';
+
+.bg-blue {
+    @extend %bg-blue;
+}

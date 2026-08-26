@@ -1,13 +1,643 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Title</title>
+        <title>AluraBooks</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/svg+xml" href="/assets/Logo.svg" />
         <link rel="stylesheet" href="src/styles/main.scss" />
     </head>
+
     <body>
-        <div>Hello World</div>
+        <div class="page-container">
+            <noscript>
+                This site requires JavaScript to function fully. Please enable
+                it in your browser.
+            </noscript>
+
+            <header class="header">
+                <button
+                    class="header__menu"
+                    id="menuToggle"
+                    aria-label="Open menu"
+                >
+                    <span class="menu-icon text--lg"></span>
+                </button>
+                <nav
+                    class="dropdown-menu"
+                    id="categoriesMenu"
+                    aria-label="Categories menu"
+                >
+                    <ul class="dropdown-menu__list">
+                        <li class="dropdown-menu__title text--sm text--bold">
+                            Categories
+                        </li>
+                        <li class="dropdown-menu__item">
+                            <a href="#" class="dropdown-menu__link"
+                                >PROGRAMMING</a
+                            >
+                        </li>
+                        <li class="dropdown-menu__item">
+                            <a href="#" class="dropdown-menu__link"
+                                >FRONT-END</a
+                            >
+                        </li>
+                        <li class="dropdown-menu__item">
+                            <a href="#" class="dropdown-menu__link"
+                                >INFRASTRUCTURE</a
+                            >
+                        </li>
+                        <li class="dropdown-menu__item">
+                            <a href="#" class="dropdown-menu__link">BUSINESS</a>
+                        </li>
+                        <li class="dropdown-menu__item">
+                            <a href="#" class="dropdown-menu__link"
+                                >DESIGN & UX</a
+                            >
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="header__content">
+                    <a href="/" class="header__brand">
+                        <img
+                            class="header__logo-img"
+                            src="/assets/Logo.svg"
+                            alt="Logo"
+                        />
+                        <div class="header__title text--xl">
+                            <span class="text--bold text--lg">Alura</span>Books
+                        </div>
+                    </a>
+                    <nav class="header__navbar" aria-label="Main navigation">
+                        <ul class="header__list">
+                            <div id="categoryWrapper">
+                                <li>
+                                    <button
+                                        id="categoriesToggle"
+                                        class="header__button"
+                                    >
+                                        CATEGORIES
+                                    </button>
+                                </li>
+                                <ul
+                                    class="dropdown-category__list"
+                                    id="categoryList"
+                                    aria-label="Categories"
+                                >
+                                    <li class="dropdown-category__item">
+                                        <a
+                                            href="#"
+                                            class="dropdown-category__link"
+                                            >PROGRAMMING</a
+                                        >
+                                    </li>
+                                    <li class="dropdown-category__item">
+                                        <a
+                                            href="#"
+                                            class="dropdown-category__link"
+                                            >FRONT-END</a
+                                        >
+                                    </li>
+                                    <li class="dropdown-category__item">
+                                        <a
+                                            href="#"
+                                            class="dropdown-category__link"
+                                            >INFRASTRUCTURE</a
+                                        >
+                                    </li>
+                                    <li class="dropdown-category__item">
+                                        <a
+                                            href="#"
+                                            class="dropdown-category__link"
+                                            >BUSINESS</a
+                                        >
+                                    </li>
+                                    <li class="dropdown-category__item">
+                                        <a
+                                            href="#"
+                                            class="dropdown-category__link"
+                                            >DESIGN & UX</a
+                                        >
+                                    </li>
+                                </ul>
+                            </div>
+                            <li>
+                                <button class="header__button">
+                                    FAVORITES
+                                </button>
+                            </li>
+                            <li>
+                                <button class="header__button">
+                                    MY BOOKSHELF
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="header__icons text--3xl">
+                        <button class="header__heart" aria-label="Favorites">
+                            <span class="heart-icon"></span>
+                        </button>
+                        <button class="header__bag" aria-label="Shopping Bag">
+                            <span class="bag-icon"></span>
+                            <div class="header__icon-detail text--rg">
+                                My Bag
+                            </div>
+                        </button>
+                        <button
+                            class="header__profile"
+                            aria-label="User Profile"
+                        >
+                            <span class="profile-icon"></span>
+                            <div class="header__icon-detail text--rg">
+                                My Profile
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <main>
+                <section class="search-section">
+                    <h1 class="search-section__heading">
+                        Do you already know where to start?
+                    </h1>
+                    <p class="text--xs search-section__details">
+                        Find what you need for your development on our
+                        bookshelf!
+                    </p>
+                    <form class="search-section__form">
+                        <input
+                            type="text"
+                            class="search-section__input icon"
+                            id="search"
+                            placeholder=" "
+                            aria-label="Search for books"
+                        />
+                        <label for="search" class="search-section__label">
+                            <span class="search-icon text--sm"></span>
+                            <span class="search-section__search-text"
+                                >What will your next read be?
+                            </span>
+                        </label>
+                    </form>
+                </section>
+
+                <section class="latest-releases">
+                    <h2 class="latest-releases__heading">LATEST RELEASES</h2>
+                    <div class="latest-releases__content">
+                        <div
+                            id="latest-releases__carousel"
+                            class="splide"
+                            aria-label="Product Showcase"
+                        >
+                            <!-- Track container -->
+                            <div class="splide__track">
+                                <ul class="splide__list">
+                                    <li class="splide__slide">
+                                        <img
+                                            src="/assets/images/Acessibilidade.webp"
+                                            alt="Acessibilidade"
+                                        />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img
+                                            src="/assets/images/Angular.webp"
+                                            alt="Angular"
+                                        />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img
+                                            src="/assets/images/ApacheKafka.webp"
+                                            alt="ApacheKafka"
+                                        />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img
+                                            src="/assets/images/Arquitetura.webp"
+                                            alt="Arquitetura"
+                                        />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img
+                                            src="/assets/images/Construct2.webp"
+                                            alt="Construct2"
+                                        />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img
+                                            src="/assets/images/Gestão.webp"
+                                            alt="Gestão"
+                                        />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img
+                                            src="/assets/images/Gestão2.webp"
+                                            alt="Gestão2"
+                                        />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img
+                                            src="/assets/images/Guia Front-end.webp"
+                                            alt="Guia Front-end"
+                                        />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img
+                                            src="/assets/images/Javascript.webp"
+                                            alt="Javascript"
+                                        />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img
+                                            src="/assets/images/Liderança.webp"
+                                            alt="Liderança"
+                                        />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img
+                                            src="/assets/images/MEAN.webp"
+                                            alt="MEAN"
+                                        />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img
+                                            src="/assets/images/MetricasAgeis.webp"
+                                            alt="MetricasAgeis"
+                                        />
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <article class="latest-releases__article">
+                            <div class="latest-releases__article-text">
+                                <h3 class="latest-releases__article-heading">
+                                    You might also be interested in...
+                                </h3>
+                                <h4 class="latest-releases__article-subheading">
+                                    Angular 11 and Firebase
+                                </h4>
+                                <p class="latest-releases__article-detail">
+                                    Building an application integrated with the
+                                    Google platform.
+                                </p>
+                                <div class="latest-releases__icons">
+                                    <button aria-label="Add to favorites">
+                                        <span
+                                            class="heart-icon text--lg"
+                                        ></span>
+                                    </button>
+                                    <button aria-label="Add to bag">
+                                        <span class="bag-icon text--lg"></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="latest-releases__article-content">
+                                <img
+                                    class="latest-releases__article-img"
+                                    src="/assets/images/Perfil-escritora 2.webp"
+                                    alt="Angular"
+                                />
+                                <button
+                                    class="text--bold latest-releases__button"
+                                >
+                                    Learn more
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="best-sellers">
+                    <h2 class="best-sellers__heading">BEST-SELLERS</h2>
+                    <div class="best-sellers__content">
+                        <div
+                            id="best-sellers__carousel"
+                            class="splide"
+                            aria-label="Product Showcase"
+                        >
+                            <!-- Track container -->
+                            <div class="splide__track">
+                                <ul class="splide__list">
+                                    <li class="splide__slide">
+                                        <img
+                                            src="/assets/images/Acessibilidade.webp"
+                                            alt="Acessibilidade"
+                                        />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img
+                                            src="/assets/images/Angular.webp"
+                                            alt="Angular"
+                                        />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img
+                                            src="/assets/images/ApacheKafka.webp"
+                                            alt="ApacheKafka"
+                                        />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img
+                                            src="/assets/images/Arquitetura.webp"
+                                            alt="Arquitetura"
+                                        />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img
+                                            src="/assets/images/Construct2.webp"
+                                            alt="Construct2"
+                                        />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img
+                                            src="/assets/images/Gestão.webp"
+                                            alt="Gestão"
+                                        />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img
+                                            src="/assets/images/Gestão2.webp"
+                                            alt="Gestão2"
+                                        />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img
+                                            src="/assets/images/Guia Front-end.webp"
+                                            alt="Guia Front-end"
+                                        />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img
+                                            src="/assets/images/Javascript.webp"
+                                            alt="Javascript"
+                                        />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img
+                                            src="/assets/images/Liderança.webp"
+                                            alt="Liderança"
+                                        />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img
+                                            src="/assets/images/MEAN.webp"
+                                            alt="MEAN"
+                                        />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img
+                                            src="/assets/images/MetricasAgeis.webp"
+                                            alt="MetricasAgeis"
+                                        />
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <article class="best-sellers__article">
+                            <div class="best-sellers__article-text">
+                                <div class="best-sellers__article-stars">
+                                    <span class="star-icon text--2xs"></span>
+                                    <span class="star-icon text--2xs"></span>
+                                    <span class="star-icon text--2xs"></span>
+                                    <span class="star-icon text--2xs"></span>
+                                    <span class="star-icon text--2xs"></span>
+                                </div>
+                                <h3 class="best-sellers__article-heading">
+                                    Author of the Month
+                                </h3>
+                                <h4 class="best-sellers__article-subheading">
+                                    Juliana Agarikov
+                                </h4>
+                                <p class="best-sellers__article-detail">
+                                    A systems analyst and writer, Juliana
+                                    specializes in front-end development.
+                                </p>
+                                <div class="best-sellers__icons">
+                                    <button aria-label="Add to favorites">
+                                        <span
+                                            class="heart-icon text--lg"
+                                        ></span>
+                                    </button>
+                                    <button aria-label="Add to bag">
+                                        <span class="bag-icon text--lg"></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="best-sellers__article-content">
+                                <img
+                                    class="best-sellers__article-img"
+                                    src="/assets/images/Perfil-escritora 1.webp"
+                                    alt="Author"
+                                />
+                                <button class="best-sellers__button">
+                                    Learn more
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+                <section class="recently-visited">
+                    <h2 class="text--light recently-visited__heading">
+                        RECENTLY VISITED TOPICS
+                    </h2>
+                    <div
+                        class="recently-visited__topics"
+                        role="group"
+                        aria-label="Recently visited topics"
+                    >
+                        <button
+                            class="recently-visited__topic-title text--bold"
+                        >
+                            Android
+                        </button>
+                        <button
+                            class="recently-visited__topic-title text--bold"
+                        >
+                            Marketing Digital
+                        </button>
+                        <button
+                            class="recently-visited__topic-title text--bold"
+                        >
+                            Agile
+                        </button>
+                        <button
+                            class="recently-visited__topic-title text--bold"
+                        >
+                            Startups
+                        </button>
+                        <button
+                            class="recently-visited__topic-title text--bold"
+                        >
+                            HTML & CSS
+                        </button>
+                        <button
+                            class="recently-visited__topic-title text--bold"
+                        >
+                            Python
+                        </button>
+                        <button
+                            class="recently-visited__topic-title text--bold"
+                        >
+                            OO
+                        </button>
+                        <button
+                            class="recently-visited__topic-title text--bold"
+                        >
+                            Java
+                        </button>
+                    </div>
+                </section>
+
+                <section class="sign-up">
+                    <div class="sign-up__content">
+                        <h2 class="sign-up__heading text--medium">
+                            Stay up to date with the latest news!
+                        </h2>
+                        <p class="sign-up__text">
+                            E-book updates, new books, promotions and more.
+                        </p>
+                    </div>
+                    <button class="sign-up__button">
+                        <span class="mail-icon" aria-hidden="true"></span>
+                        <span>Sign up with your email</span>
+                    </button>
+                </section>
+            </main>
+            <hr />
+            <footer class="footer">
+                <h2 class="text--regular footer__heading">Alura Group</h2>
+                <div class="footer__content">
+                    <div class="footer__column">
+                        <h5 class="text--regular footer__subheading">
+                            EDUCATION
+                        </h5>
+                        <a href="#" class="footer__link">
+                            <img src="/assets/icons/Caelum.svg" alt="Caelum" />
+                            <span class="footer__link-title">Caelum</span>
+                        </a>
+                        <a href="#" class="footer__link">
+                            <img
+                                src="/assets/icons/Casa do codigo.svg"
+                                alt="Casa do codigo"
+                            />
+                            <span class="footer__link-title"
+                                >Casa do Código</span
+                            >
+                        </a>
+                    </div>
+                    <div class="footer__column">
+                        <h5 class="text--regular footer__subheading">
+                            ONLINE EDUCATION
+                        </h5>
+                        <a href="#" class="footer__link">
+                            <img src="/assets/icons/Alura.svg" alt="Alura" />
+                            <span class="footer__link-title">Alura</span>
+                        </a>
+                        <a href="#" class="footer__link">
+                            <img
+                                src="/assets/icons/Alura para empresas.svg"
+                                alt="Alura Para Empresas"
+                            />
+                            <span class="footer__link-title"
+                                >Alura Para Empresas</span
+                            >
+                        </a>
+                        <a href="#" class="footer__link">
+                            <img
+                                src="/assets/icons/Alura.svg"
+                                alt="Alura LATAM"
+                            />
+                            <span class="footer__link-title">Alura LATAM</span>
+                        </a>
+                        <a href="#" class="footer__link">
+                            <img
+                                src="/assets/icons/Alura start.svg"
+                                alt="Alura Start"
+                            />
+                            <span class="footer__link-title">Alura Start</span>
+                        </a>
+                        <a href="#" class="footer__link">
+                            <img
+                                src="/assets/icons/Music dot.svg"
+                                alt="MusicDot"
+                            />
+                            <span class="footer__link-title">MusicDot</span>
+                        </a>
+                        <a href="#" class="footer__link">
+                            <img
+                                src="/assets/icons/Alura Lingua.svg"
+                                alt="Alura Lingua"
+                            />
+                            <span class="footer__link-title">Alura Lingua</span>
+                        </a>
+                        <a href="#" class="footer__link">
+                            <img src="/assets/icons/PM3.svg" alt="PM3" />
+                            <span class="footer__link-title">PM3</span>
+                        </a>
+                    </div>
+                    <div class="footer__column">
+                        <h5 class="text--regular footer__subheading">
+                            COMMUNITY
+                        </h5>
+                        <a href="#" class="footer__link">
+                            <img
+                                src="/assets/icons/Hipsters Ponto tech.svg"
+                                alt="Hipsters ponto Tech"
+                            />
+                            <span class="footer__link-title"
+                                >Hipsters ponto Tech</span
+                            >
+                        </a>
+                        <a href="#" class="footer__link">
+                            <img
+                                src="/assets/icons/Scuba dev.svg"
+                                alt="Scuba Dev"
+                            />
+                            <span class="footer__link-title">Scuba Dev</span>
+                        </a>
+                        <a href="#" class="footer__link">
+                            <img
+                                src="/assets/icons/Layers ponto tech.svg"
+                                alt="Layers ponto Tech"
+                            />
+                            <span class="footer__link-title"
+                                >Layers ponto Tech</span
+                            >
+                        </a>
+                        <a href="#" class="footer__link">
+                            <img
+                                src="/assets/icons/Like a boss.svg"
+                                alt="Like a Boss"
+                            />
+                            <span class="footer__link-title">Like a Boss</span>
+                        </a>
+                        <a href="#" class="footer__link">
+                            <img
+                                src="/assets/icons/Carreira sem fronteira.svg"
+                                alt="Carreira sem Fronteira"
+                            />
+                            <span class="footer__link-title"
+                                >Carreira sem Fronteira</span
+                            >
+                        </a>
+                        <a href="#" class="footer__link">
+                            <img
+                                src="/assets/icons/Hipsters ponto jobs.svg"
+                                alt="Hipsters ponto Jobs"
+                            />
+                            <span class="footer__link-title"
+                                >Hipsters ponto Jobs</span
+                            >
+                        </a>
+                        <a href="#" class="footer__link">
+                            <img src="/assets/icons/GUJ.svg" alt="GUJ" />
+                            <span class="footer__link-title">GUJ</span>
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        </div>
         <script type="module" src="./src/script/index.js"></script>
     </body>
 </html>
